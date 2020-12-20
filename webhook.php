@@ -7,7 +7,7 @@ $secret = "zl0427...";
 // Path to your respostory on your server.
 // e.g. "/var/www/respostory"
 // 项目地址
-$path = "/www/wwwroot/babalu.link";
+$path = "/www/wwwroot/myblog";
 
 // Headers deliveried from GitHub
 $signature = $_SERVER['HTTP_X_HUB_SIGNATURE'];

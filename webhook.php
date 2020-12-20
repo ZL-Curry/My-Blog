@@ -2,6 +2,7 @@
 // GitHub Webhook Secret.
 // GitHub项目 Settings/Webhooks 中的 Secret
 $secret = "zl0427...";
+//这是测试注释
 
 // Path to your respostory on your server.
 // e.g. "/var/www/respostory"

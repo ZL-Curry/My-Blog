@@ -1,6 +1,6 @@
 <template>
   <div id="all">
-    <h2>注册</h2>
+    <h2>会员注册</h2>
     <div class="row">
       <input
         class="bloders"

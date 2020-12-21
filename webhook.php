@@ -7,7 +7,7 @@ $secret = "babalu";
 // e.g. "/var/www/respostory"
 // 项目地址
 $path = "/www/wwwroot/blog";
-
+// change
 // Headers deliveried from GitHub
 $signature = $_SERVER['HTTP_X_HUB_SIGNATURE'];
 

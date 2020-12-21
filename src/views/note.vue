@@ -1,8 +1,8 @@
 <template>
     <div>
-      <h1>关于</h1>
-      <h3>创建与2020年12月21日</h3>
-      <h3>作者: 巴巴鲁</h3>
+     <blockquote>
+      <p><span>这是我的第一个笔记</span></p>
+    </blockquote>
     </div>
 </template>
 
@@ -25,6 +25,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-  <el-header>
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <el-header class="headers">
+    <el-menu :default-active="activeIndex"  @select="handleSelect">
       <el-row type="flex">
         <el-col :span='2':offset="2" class="babalu">
-          <div >巴巴鲁</div></el-col>
+          <div >巴巴鲁</div>
+        </el-col>
         <el-col :span='5' :offset="14">
           <el-row type="flex">
             <el-menu-item index="/">首页</el-menu-item>
@@ -36,9 +37,12 @@ export default {
       activeIndex: this.$route.path,
     };
   },
+  created(){
+    console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
+  },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
       this.$router.push(key);
     },
   },
@@ -56,19 +60,23 @@ export default {
   margin: 0;
   padding: 0;
 }
+.el-menu-item, .el-submenu__title{
+  height: 60px;
+}
 .el-header {
   padding: 0;
+  border-bottom: solid 1px #ccc;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 .el-footer {
-    box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid rgb(238, 238, 238);
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ccc;
     color: #333;
     text-align: center;
     line-height: 60px;
 }
 .mains{
   width: 83%;
-  // background: rgb(202, 200, 200);
   margin: 0 auto;
   display: flex;
 }

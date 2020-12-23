@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="left">
-      <div class="card">
+      <div class="card" v-for="item in 10">
         <h4>路由拦截器</h4>
         <br />
         <h5>请求拦截器</h5>
@@ -27,7 +27,14 @@
     </div>
     <div class="right">
       <div class="broadside">
-        <h5>长恨歌</h5>
+        <!-- :class="{ act: current == index }" -->
+        <h5
+          v-for="(item, index) in asideTexts"
+          @click="asideClick(index)"
+          :class="{ act: changeActiveText == index }"
+        >
+          {{ item }}
+        </h5>
       </div>
     </div>
   </div>
@@ -35,23 +42,51 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      indexs: "1",
+      asideTexts: [],
+      changeActiveText: "",
+    };
   },
-  methods: {},
+  methods: {
+    asideClick(index) {
+      var elmnt = document.querySelectorAll("h5")[index];
+      elmnt.scrollIntoView({ behavior: "smooth" });
+      this.changeActiveText = index;
+    },
+  },
+  mounted() {
+    var x = document.querySelectorAll("h5");
+    let asideText = [];
+    for (let i = 0; i < x.length; i++) {
+      asideText.push(x[i].innerHTML);
+    }
+    this.asideTexts = asideText;
+  },
+  created() {
+    
+  },
 };
 </script>
 <style lang="scss" scoped>
-
+h5 {
+  margin: 20px 0px;
+}
 .home {
-  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
 }
+
 .left {
-  width: 65%;
+  width: 72%;
 }
+
 .right {
-  width: 30%;
+  width: 20%;
+  position: fixed;
+  top: 60px;
+  right: 8%;
+  height: 450px;
 }
 .card {
   width: 100%;
@@ -72,6 +107,7 @@ export default {
 .card h5 {
   margin: 7px 0;
 }
+
 .card img {
   width: 100%;
 }
@@ -82,6 +118,7 @@ export default {
 }
 .broadside {
   width: 100%;
+  height: 100%;
   border-radius: 7px;
   background: linear-gradient(
     to right bottom,
@@ -95,5 +132,32 @@ export default {
   padding: 20px;
   box-sizing: border-box;
   margin: 20px 0px;
+  overflow: auto;
+}
+.broadside h5.act {
+  color: rgb(32, 70, 196);
+}
+// .broadside::-webkit-scrollbar {
+//   width: 0 !important;
+// }
+
+.broadside::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+  // height: 0px;
+}
+
+.broadside::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #1a5185;
+}
+
+.broadside::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(141, 140, 140, 0.2);
+  border-radius: 10px;
+  background: #ededed;
 }
 </style>

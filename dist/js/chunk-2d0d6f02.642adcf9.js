@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d6f02"],{"754b":function(n,t,e){"use strict";e.r(t);var u=function(){var n=this,t=n.$createElement;n._self._c;return n._m(0)},c=[function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("div",[e("h1",[n._v("关于")]),e("h3",[n._v("创建与2020年12月21日")]),e("h3",[n._v("作者: 巴巴鲁")])])}],r={data:function(){return{}},created:function(){},mounted:function(){},methods:{}},o=r,a=e("2877"),i=Object(a["a"])(o,u,c,!1,null,null,null);t["default"]=i.exports}}]);
-//# sourceMappingURL=chunk-2d0d6f02.642adcf9.js.map

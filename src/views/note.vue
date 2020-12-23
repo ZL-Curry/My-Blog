@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="note">
      <blockquote>
       <p><span>这是我的第一个笔记</span></p>
     </blockquote>
@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .note{
+    height: calc(100vh - 120px);
+  }
 </style>

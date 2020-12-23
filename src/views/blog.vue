@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog">
 
     </div>
 </template>
@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .blog{
+    height: calc(100vh - 120px);
+  }
 </style>

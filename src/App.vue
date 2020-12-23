@@ -97,7 +97,7 @@ export default {
   outline: none;
   cursor: pointer;
   padding: 10px;
-  border-radius: 10px; /* 圆角 */
+  border-radius: 50%; /* 圆角 */
   width: 50px;
   height: 50px;
   background: rgb(238, 138, 138);

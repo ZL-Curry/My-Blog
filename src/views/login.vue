@@ -11,7 +11,7 @@
       />
       <label class="bloders" for="username">用户名</label>
     </div>
-    <div class="row">   
+    <div class="row">
       <input
         class="bloders"
         type="password"
@@ -148,7 +148,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
 .relative_yzm {
   position: relative;
 }
@@ -165,7 +164,6 @@ export default {
   right: 6px;
   top: 10px;
   animation: hueRotate 20s infinite alternate;
-  
 }
 @keyframes hueRotate {
   100% {
@@ -198,20 +196,28 @@ html {
   position: relative;
 }
 @media all and (max-width: 375px) {
-    .row {width: 230px;}
+  .row {
+    width: 230px;
+  }
 }
 
 @media all and (min-width: 400px) {
-   .row {width: 270px;}
+  .row {
+    width: 270px;
+  }
 }
 
 @media all and (max-width: 520px) {
-    .row {width: 270px;}
-} 
+  .row {
+    width: 270px;
+  }
+}
 
 @media all and (min-width: 520px) {
-    .row {width: 400px;}
-} 
+  .row {
+    width: 400px;
+  }
+}
 .row input {
   width: 100%;
   font-size: 1rem;

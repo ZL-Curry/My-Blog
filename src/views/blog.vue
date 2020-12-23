@@ -1,30 +1,20 @@
 <template>
-    <div class="blog">
-
-    </div>
+  <div class="blog"></div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-
-    }
+  data() {
+    return {};
   },
-  created () {
-
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
-}
+  created() {},
+  mounted() {},
+  methods: {},
+};
 </script>
 
 <style scoped>
-  .blog{
-    height: calc(100vh - 120px);
-  }
+.blog {
+  height: calc(100vh - 120px);
+}
 </style>

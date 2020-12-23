@@ -63,9 +63,7 @@ export default {
     }
     this.asideTexts = asideText;
   },
-  created() {
-    
-  },
+  created() {},
 };
 </script>
 <style lang="scss" scoped>

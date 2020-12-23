@@ -26,7 +26,7 @@
         </el-col>
       </el-row>
     </el-container>
-    <button id="myBtn"></button>
+    <button id="myBtn">UP</button>
     <el-footer
       >© 2020 个人博客 blog.babalu.link | QQ:1697362616 |
       Github:ZL-Curry</el-footer

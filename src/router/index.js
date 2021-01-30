@@ -36,6 +36,11 @@ const routes = [
     name: 'blog',
     component: () => import('../views/blog.vue')
   },
+  {
+    path: '/rich',
+    name: 'rich',
+    component: () => import('../views/richtext.vue')
+  },
 ]
 
 const router = new VueRouter({

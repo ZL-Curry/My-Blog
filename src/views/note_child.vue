@@ -1,7 +1,5 @@
 <template>
-  <div class="note">
-    <blockquote>
-      <p><span>这是我的第一个笔记</span></p>
+    <div>
       <el-card class="box-card">
         <div slot="header" class="clearfix">
           <span>卡片名称</span>
@@ -13,32 +11,24 @@
           {{ "列表内容 " + o }}
         </div>
       </el-card>
-    </blockquote>
-    <notes />
-  </div>
+    </div>
 </template>
 
 <script>
-import notes from './note_child'
-
 export default {
-  data() {
-    return {};
+  name: '',
+  props: {},
+  data () {
+    return {}
   },
-  components:{
-notes
-  },
-  created() {},
-  mounted() {},
-  methods: {},
-};
+  computed: {},
+  watch: {},
+  created () {},
+  mounted () {},
+  methods: {}
+}
 </script>
 
-<style  scoped>
- .note /deep/ .box-card{
-  background: #ccc;
-}
-.note {
-  height: calc(100vh - 120px);
-}
+<style scoped lang="less">
+
 </style>

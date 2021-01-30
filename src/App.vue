@@ -64,7 +64,6 @@ export default {
     window.onscroll = function () {
       var backTop =
         document.documentElement.scrollTop || document.body.scrollTop;
-      console.log(backTop);
       var nav = document.querySelector(".headers");
      
 

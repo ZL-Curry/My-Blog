@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <el-header class="headers">
+    <Headerbar/>
+    <!-- <el-header class="headers">
       <el-menu :default-active="activeIndex" @select="handleSelect">
         <el-row type="flex">
           <el-col :span="2" :offset="2" class="babalu">
@@ -16,7 +17,7 @@
           </el-col>
         </el-row>
       </el-menu>
-    </el-header>
+    </el-header> -->
     <el-container class="mains">
       <el-row style="width: 100%">
         <el-col :span="24">
@@ -34,14 +35,19 @@
   </div>
 </template>
 <script scoped>
+import  Headerbar  from "./views/headerbar/headerbar";
 export default {
   data() {
     return {
-      activeIndex: this.$route.path,
+  
+       activeIndex: this.$route.path,
     };
   },
   created() {
     // console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
+  },
+  components: {
+    Headerbar
   },
   mounted() {
     var toTop = document.getElementById("myBtn");

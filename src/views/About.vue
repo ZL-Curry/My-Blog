@@ -16,6 +16,14 @@
       💖
     </p>
     <p>本博客主要写一些技术博客，偶尔会记录一下自己的生活和个人感悟 🎈</p>
+    <div style="height: 300px;">
+      <el-steps direction="vertical" :active="1">
+        <el-step title="响应式布局" description="实现各种设备兼容"></el-step>
+        <el-step title="富文本编辑器" description="TipTap或百度Editor"></el-step>
+        <el-step title="Node后台接口" description="设计一个完成的博客系统后台，完成增删改查"></el-step>
+        <el-step title="支持登录，留言，发布帖子" description="目前已完成登录注册功能"></el-step>
+      </el-steps>
+    </div>
   </div>
 </template>
 <script>
@@ -31,8 +39,8 @@ export default {
 
 <style lang="scss">
 .about {
-  height: calc(100vh - 120px);
-  padding: 0px 10%;
+  min-height: calc(100vh - 126px);
+  padding: 0px 2%;
   span {
     font-size: 20px;
     color: #f40;
@@ -42,12 +50,12 @@ export default {
     border-bottom: 1px solid #cccccc;
   }
   p {
-    padding: 10px 10px 10px 20px;
+    padding: 10px 5px 10px 5px;
     line-height: 2em;
   }
   em {
     font-style: normal;
-    background: rgb(171, 224, 245);
+    background: rgb(132, 189, 0);
     border-radius: 5px;
     padding: 2px 5px;
   }

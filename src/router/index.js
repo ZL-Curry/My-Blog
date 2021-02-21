@@ -8,14 +8,37 @@ const routes = [
   {
     path: '/',
     // redirect:'/login',
-    name: 'home',
-    component: home
+    // name: 'home',
+    component: home,
+    children: [
+      {
+        path: '',
+        name: 'index',
+        component: () => import('../views/home/')
+      },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('../views/About.vue')
+      },
+      {
+        path: '/note',
+        name: 'note',
+        component: () => import('../views/note.vue')
+      },
+      {
+        path: '/blog',
+        name: 'blog',
+        component: () => import('../views/blog.vue')
+      },
+      // {
+      //   path: '/wang',
+      //   name: 'wang',
+      //   component: () => import('../views/wangeditor/')
+      // }
+    ]
   },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/About.vue')
-  },
+  
   {
     path: '/reg',
     name: 'reg',
@@ -26,16 +49,7 @@ const routes = [
     name: 'login',
     component: () => import('../views/login.vue')
   },
-  {
-    path: '/note',
-    name: 'note',
-    component: () => import('../views/note.vue')
-  },
-  {
-    path: '/blog',
-    name: 'blog',
-    component: () => import('../views/blog.vue')
-  }
+  
   // ,
   // {
   //   path: '/rich',

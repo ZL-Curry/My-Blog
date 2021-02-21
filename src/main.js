@@ -3,14 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-// import { Button, Select,MenuAttribute } from 'element-ui';
-// Vue.use(Button)
-// Vue.use(Select)
-// Vue.use(MenuAttribute)
-
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
+
 
 //引入公共的方法 
 import tools from "./utils/tools"

@@ -1,32 +1,21 @@
 <template>
   <div class="note">
     <blockquote>
-      <p><span>这是我的第一个笔记</span></p>
-      <el-card class="box-card">
-        <div slot="header" class="clearfix">
-          <span>卡片名称</span>
-          <el-button style="float: right; padding: 3px 0" type="text"
-            >操作按钮</el-button
-          >
-        </div>
-        <div v-for="o in 4" :key="o" class="text item">
-          {{ "列表内容 " + o }}
-        </div>
-      </el-card>
+      <p class="weight">记录生活,定格瞬间</p>
     </blockquote>
     <notes />
   </div>
 </template>
 
 <script>
-import notes from './note_child'
+import notes from "./note_child";
 
 export default {
   data() {
     return {};
   },
-  components:{
-notes
+  components: {
+    notes,
   },
   created() {},
   mounted() {},
@@ -35,10 +24,16 @@ notes
 </script>
 
 <style  scoped>
- .note /deep/ .box-card{
+/* .note /deep/ .box-card {
   background: #ccc;
-}
+} */
 .note {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 126px);
+  
+}
+.weight{
+  font-weight: 600px;
+  font-size: 20px;
+  margin: 10px 5px;
 }
 </style>

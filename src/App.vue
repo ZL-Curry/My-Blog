@@ -17,13 +17,19 @@
         </el-row>
       </el-menu>
     </el-header> -->
-    
+    <!-- <Player></Player> -->
     <router-view />
     <!-- <button id="myBtn">UP</button> -->
     
   </div>
 </template>
 <script scoped>
+import Player from 'zw-player'
+export default {
+  components: {
+    Player
+}
+}
 // import  Headerbar  from "./views/headerbar/headerbar";
 // export default {
 //   data() {

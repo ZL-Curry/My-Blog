@@ -8,7 +8,7 @@
     </div>
     <!-- 左侧 -->
 
-    <el-footer> QQ:1697362616 | Github:ZL-Curry</el-footer>
+    <el-footer><a href="http://wpa.qq.com/msgrd?v=3&uin=1697362616&site=qq&menu=yes" target="_blank">QQ:1697362616</a> | <a href="https://github.com/ZL-Curry/" target='_blank'>Github:ZL-Curry</a></el-footer>
   </div>
 </template>
 <script>
@@ -64,6 +64,7 @@ export default {
     handleSelect(key, keyPath) {
       this.$router.push(key);
     },
+    
   },
 };
 </script>
@@ -130,7 +131,8 @@ export default {
 .mains {
   width: 83%;
   margin: 0 auto;
-  min-height: calc(100vh - 126px);
+  // min-height: calc(100vh - 126px);
+  // height: auto;
 }
 .babalu {
   display: flex;

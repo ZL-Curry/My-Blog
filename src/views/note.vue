@@ -28,8 +28,6 @@ export default {
   background: #ccc;
 } */
 .note {
-  height: calc(100vh - 126px);
-  
 }
 .weight{
   font-weight: 600px;

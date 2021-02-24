@@ -1,6 +1,7 @@
 <template>
-    <div>
-      <el-card class="box-card" v-for="item in notes">
+    <div  >
+      <div >
+        <el-card class="box-card box" v-for="item in notes" v-scroll="handleScroll" >
         <div slot="header" class="clearfix">
           <span>{{item.title}}</span>
         </div>
@@ -8,6 +9,16 @@
           {{ item.text }}
         </div>
       </el-card>
+      <el-card class="box-card box" v-for="item in notes" v-scroll="handleScroll" >
+        <div slot="header" class="clearfix">
+          <span>{{item.title}}</span>
+        </div>
+        <div  class="text item">
+          {{ item.text }}
+        </div>
+      </el-card>
+      </div>
+
     </div>
 </template>
 
@@ -32,13 +43,28 @@ export default {
   computed: {},
   watch: {},
   created () {},
-  mounted () {},
-  methods: {}
+  mounted () {
+    
+  },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 50) {
+        el.setAttribute(
+          'style',
+          'opacity: 1; transform: translate3d(0, -10px, 0)'
+        )
+      }
+      return window.scrollY > 100
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .box-card{
   margin: 10px 0px;
+}
+.box {
+  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 </style>

@@ -1,6 +1,7 @@
+import axios from 'axios'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import home from '../views/Home.vue'
+import home from '../views/index.vue'
 
 Vue.use(VueRouter)
 
@@ -14,22 +15,35 @@ const routes = [
       {
         path: '',
         name: 'index',
-        component: () => import('../views/home/')
+        component: () => import('../views/home/'),
+        meta:{
+          keepAlive:true
+        }
       },
       {
         path: '/about',
         name: 'about',
-        component: () => import('../views/About.vue')
+        component: () => import('../views/About/'),
+        meta: {
+          title: '关于'
+        }
       },
       {
         path: '/note',
         name: 'note',
-        component: () => import('../views/note.vue')
+        component: () => import('../views/note/note.vue'),
+        meta: {
+          title: '笔记',
+          keepAlive:true
+        }
       },
       {
-        path: '/blog',
-        name: 'blog',
-        component: () => import('../views/blog.vue')
+        path: '/navigation',
+        name: '导航',
+        component: () => import('../views/nav/'),
+        meta: {
+          title: '导航'
+        }
       },
       // {
       //   path: '/wang',
@@ -38,18 +52,18 @@ const routes = [
       // }
     ]
   },
-  
+
   {
     path: '/reg',
     name: 'reg',
-    component: () => import('../views/reg.vue')
+    component: () => import('../views/user/reg.vue')
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/login.vue')
+    component: () => import('../views/user/login.vue')
   },
-  
+
   // ,
   // {
   //   path: '/rich',
@@ -60,6 +74,10 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title ? '巴巴鲁-' + to.meta.title : '巴巴鲁'
+  next()
 })
 
 export default router

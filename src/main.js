@@ -8,6 +8,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
 
+import axios from 'axios'
+const baseurl = "http://localhost:8000"
+axios.defaults.baseURL = baseurl
+Vue.prototype.$axios = axios
+
+
 //引入公共的方法 
 import tools from "./utils/tools"
 Vue.mixin(tools)

@@ -1,30 +1,59 @@
 <template>
-  <div class="navbar">
-    <div class="top_line"></div>
-    <div class="mask" v-if="status" @click="status = !status"></div>
-    <div class="navcontent">
-      <div class="babalu">
-        <p>巴巴鲁</p>
+  <div class="nav">
+    <div class="navbar">
+      <div class="top_line"></div>
+      <div class="mask" v-if="status" @click="status = !status"></div>
+      <div class="navcontent">
+        <div class="babalu">
+          <p @click="click_name">{{ $store.state.username }}</p>
+        </div>
+        <div
+          class="nav-items"
+          :class="status ? 'nav-itemshow' : ''"
+          @click="status = false"
+        >
+          <div
+            class="nav-item"
+            :class="{ active: urlpath == '/' }"
+            @click="togglePath('/')"
+          >
+            首页
+          </div>
+          <div
+            class="nav-item"
+            :class="{ active: urlpath == '/navigation' }"
+            @click="togglePath('/navigation')"
+          >
+            导航
+          </div>
+          <div
+            class="nav-item"
+            :class="{ active: urlpath == '/note' }"
+            @click="togglePath('/note')"
+          >
+            笔记
+          </div>
+          <div
+            class="nav-item"
+            :class="{ active: urlpath == '/about' }"
+            @click="togglePath('/about')"
+          >
+            关于
+          </div>
+        </div>
+        <button
+          type="button"
+          class="nav-btn"
+          id="nav-btn"
+          @click="status = !status"
+        >
+          <!--按钮-->
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <div class="nav-items" :class="status ? 'nav-itemshow' : ''" @click="status=false">
-        <div class="nav-item" :class="{'active':urlpath=='/'}" @click="togglePath('/')">首页</div>
-        <div class="nav-item" :class="{'active':urlpath=='/blog'}" @click="togglePath('/blog')">博客</div>
-        <div class="nav-item" :class="{'active':urlpath=='/note'}" @click="togglePath('/note')">笔记</div>
-        <div class="nav-item" :class="{'active':urlpath=='/about'}" @click="togglePath('/about')">关于</div>
-      </div>
-      <button
-        type="button"
-        class="nav-btn"
-        id="nav-btn"
-        @click="status = !status"
-      >
-        <!--按钮-->
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
-    
   </div>
 </template>
 
@@ -39,27 +68,61 @@ export default {
     };
   },
   computed: {
-    urlpath(){
-      return this.$route.path
-    }
+    urlpath() {
+      return this.$route.path;
+    },
+    // getter_text(){
+    //   return this.$store.getters.getterCount
+    // }
   },
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
   methods: {
+    click_name() {
+      // console.log(this.$store.state.username)
+      // this.$store.dispatch('changename')
+      // this.$store.commit("namechanged")
+      // this.$store.commit("addcount",10)
+      // this.$store.dispatch('actionsAddCount',100)
+      this.$store.getters.getterCount;
+    },
     toggleBtn() {
       this.status = !this.status;
     },
-    togglePath(path){
-      this.navTo(path)
-      // console.log()
-    }
+    togglePath(path) {
+      this.navTo(path);
+    },
+    handleScroll() {
+      // 获取滚动时的高度
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      if (scrollTop > 0) {
+        this.status = false;
+      }
+    },
+  },
+  destroyed() {
+    document.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
 
-<style scoped>
+<style  lang='scss'>
+.nav{
+  height: 65px;
+  width: 100%;
+}
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  clear: both;
   height: 65px;
   width: 100%;
   background-color: rgba(255, 254, 254);
@@ -68,7 +131,7 @@ export default {
 .top_line {
   height: 5px;
   width: 100%;
-  background: rgb(132, 189, 0);
+  background: $theme-color;
 }
 .navcontent {
   width: 100%;
@@ -105,14 +168,13 @@ export default {
   text-align: center;
   width: 100px;
   background-color: rgba(255, 254, 254);
-  
 }
-.nav-item.active{
+.nav-item.active {
   height: 60px;
-  border-bottom: 5px solid rgb(132, 189, 0);
+  border-bottom: 5px solid $theme-color;
   box-sizing: border-box;
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgb(131, 131, 131);
+  text-shadow: $theme-text-shadow;
 }
 
 .nav-item:hover {
@@ -133,14 +195,14 @@ export default {
   cursor: pointer;
   background: #fff;
   border-radius: 3px;
-  border-color: rgb(132, 189, 0);
+  border-color: $theme-color;
 }
 
 .nav-btn span {
   display: block;
   width: 17px;
   height: 2px;
-  background: rgb(132, 189, 0);
+  background: $theme-color;
   margin-bottom: 2px;
 }
 
@@ -156,7 +218,7 @@ export default {
     top: 65px;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999  ;
+    z-index: 999;
   }
   .navcontent {
     padding: 0;
@@ -193,6 +255,9 @@ export default {
   }
   .nav-btn {
     display: block;
+  }
+  .nav-item:hover {
+    background: #fff;
   }
 }
 </style>

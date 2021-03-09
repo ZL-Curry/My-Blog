@@ -1,21 +1,12 @@
 <template>
   <div>
     <div>
-      <!-- <el-card class="box-card box" v-for="item in notes" v-scroll="handleScroll" >
-        <div slot="header" class="clearfix">
-          <span>{{item.title}}</span>
-        </div>
-        <div  class="text item">
-          {{ item.text }}
-        </div>
-      </el-card> -->
       <el-card class="box-card" v-for="item in notes">
         <div slot="header" class="clearfix">
-          <span>{{ item.title }}</span>
+          <h3>{{ item.title }}</h3>
         </div>
         <div class="text item" v-html="item.text">
         </div>
-
         <el-image
           cover 
           lazy
@@ -39,6 +30,38 @@ export default {
   data() {
     return {
       notes: [
+        {
+          title:'Calm down and sink in',
+          text:`记账软件`,
+          imglist:[
+            {imgurl:require('./img/code_maxnumber.png')}
+          ]
+        },
+        {
+          title:'25号底片',
+          text:`To see the world<br>
+           things dangerous to come to <br>
+           To see behind walls ,To draw closer <br>
+           To find each other and to feel <br>
+           That is the purpose of LIFE <br>
+           开拓视野，冲破艰险<br>
+           洞悉所有，贴近生活<br>
+           寻找真爱，感受彼此<br>
+           这就是人生的目的 `,
+          imglist:[
+            {imgurl:require('./img/brmxj1.jpeg')},
+            {imgurl:require('./img/brmxj2.jpeg')},
+            {imgurl:require('./img/Number25.jpg')}
+          ]
+        },
+        {
+          title:'西湖-痛仰乐队',
+          text:`前天听朋友放了一首痛仰乐队的歌，名字叫《西湖》，非常好听，特别特别特别喜欢这首歌的前21秒,
+          之前在学校参加活动的时候，我们班一个同学和他的小乐队表演过痛仰的再见杰克`,
+          imglist:[
+              {imgurl: require("./img/ty_xh.jpg")}
+          ]
+        },
         {
           title:'人间-王菲',
           text:`风雨过後不一定有美好的天空<br>

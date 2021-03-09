@@ -107,8 +107,8 @@ export default {
           name:'ES6标准入门(阮一峰 著)',
         },
         {
-          href:'http://www.ruanyifeng.com/blog/',
-          name:'阮一峰的网络日志'
+          href:'http://www.ruanyifeng.com/home.html',
+          name:'阮一峰的个人网站'
         },
         {
           href:'https://react.docschina.org/',

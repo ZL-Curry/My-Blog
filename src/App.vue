@@ -1,24 +1,5 @@
 <template>
   <div id="app">
-    <div id="map-container"  style="width: 100%;height: 600px"> </div>
-    <!-- <el-header class="headers">
-      <el-menu :default-active="activeIndex" @select="handleSelect">
-        <el-row type="flex">
-          <el-col :span="2" :offset="2" class="babalu">
-            <div>巴巴鲁</div>
-          </el-col>
-          <el-col :span="5" :offset="14">
-            <el-row type="flex">
-              <el-menu-item index="/">首页</el-menu-item>
-              <el-menu-item index="/blog">博客</el-menu-item>
-              <el-menu-item index="/note">笔记</el-menu-item>
-              <el-menu-item index="/about">关于</el-menu-item>
-            </el-row>
-          </el-col>
-        </el-row>
-      </el-menu>
-    </el-header> -->
-    <!-- <Player></Player> -->
     <router-view />
     <button v-if="topheight" id="myBtn" @click="backtop">UP</button>
   </div>
@@ -35,22 +16,10 @@ export default {
     };
   },
   mounted() {
-    this.init()
     window.addEventListener("scroll", this.showbtn, true);
   },
   methods: {
-    init(){
-            const map = new AMap.Map('map-container', {
-              zoom: 11,
-              center:[116.397428,39.90923],
-              viewMode:'3D'
-            })
-            map.plugin(['AMap.ToolBar', 'AMap.MapType'], function () {
-              map.addControl(new AMap.ToolBar())
-              map.addControl(new AMap.MapType({showTraffic:false,showRoad:false}))
-            })
-
-          },
+    
     // 显示回到顶部按钮
     showbtn() {
       let that = this;
@@ -85,7 +54,7 @@ export default {
     },
   },
   async created() {
-      document.getElementById("loading").style.display = "none";
+       if(document.getElementById('Loading'))document.getElementById('Loading').remove();
   },
 };
 // import  Headerbar  from "./views/headerbar/headerbar";

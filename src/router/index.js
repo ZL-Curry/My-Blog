@@ -63,7 +63,6 @@ const routes = [
     name: 'login',
     component: () => import('../views/user/login.vue')
   },
-
   // ,
   // {
   //   path: '/rich',

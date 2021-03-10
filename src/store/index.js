@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  username: "巴巴鲁",
+  username: "</>巴巴鲁",
   count: 0
 }
 /**

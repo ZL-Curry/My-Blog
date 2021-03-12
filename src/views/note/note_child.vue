@@ -31,6 +31,10 @@ export default {
     return {
       notes: [
         {
+          title:'明天周六',
+          text:'￥——￥'
+        },
+        {
           title:'打卡睡觉',
           text:':)'
         },

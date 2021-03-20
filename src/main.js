@@ -7,9 +7,21 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+Vue.use(mavonEditor)
+
+import hljs from 'highlight.js'
+import 'highlight.js/styles/googlecode.css' // 样式文件
+Vue.directive('highlight', function (el) {
+  let blocks = el.querySelectorAll('pre code')
+  blocks.forEach((block) => {
+    hljs.highlightBlock(block)
+  })
+})
 
 import axios from 'axios'
-const baseurl = "http://localhost:8000"
+const baseurl = "http://localhost:8000"                             
 axios.defaults.baseURL = baseurl
 Vue.prototype.$axios = axios
 

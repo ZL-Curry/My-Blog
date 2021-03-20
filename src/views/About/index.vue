@@ -16,28 +16,121 @@
       💖
     </p>
     <p>本网站主要用来写一些技术博客，记录生活，分享感悟 🎈</p>
-    <div style="height: 300px;">
+    <div style="height: 300px">
       <el-steps direction="vertical" :active="1">
         <el-step title="响应式布局" description="实现各种设备兼容"></el-step>
-        <el-step title="富文本编辑器" description="TipTap或百度Editor"></el-step>
-        <el-step title="Node后台接口" description="设计一个完成的博客系统后台，完成增删改查"></el-step>
-        <el-step title="支持登录，留言，发布帖子" description="目前已完成登录注册功能"></el-step>
+        <el-step
+          title="富文本编辑器"
+          description="TipTap或百度Editor"
+        ></el-step>
+        <el-step
+          title="Node后台接口"
+          description="设计一个完成的博客系统后台，完成增删改查"
+        ></el-step>
+        <el-step
+          title="支持登录，留言，发布帖子"
+          description="目前已完成登录注册功能"
+        ></el-step>
       </el-steps>
     </div>
+    <div id="container"></div>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {};
+    return {
+      map: null,
+    };
   },
   created() {},
-  mounted() {},
-  methods: {},
+  mounted() {
+    this.initMap();
+  },
+  methods: {
+    initMap() {
+      // let map = this.map;
+      var map = new AMap.Map("container", {
+        zoom: 22, //级别
+        center: [120.234459,30.213544], //中心点坐标
+        mapStyle: "amap://styles/fresh",
+        pitch: 27, // 地图俯仰角度，有效范围 0 度- 83 度
+        // viewMode: "1D", //使用3D视图
+        layers: [
+          //使用多个图层
+          // new AMap.TileLayer.Satellite(),
+          // new AMap.TileLayer.RoadNet()
+        ],
+      });
+      AMap.plugin("AMap.Geolocation", function () {
+        geolocation = new AMap.Geolocation({
+          enableHighAccuracy: true, //是否使用高精度定位，默认:true
+          timeout: 10000, //超过10秒后停止定位，默认：无穷大
+          maximumAge: 0, //定位结果缓存0毫秒，默认：0
+          convert: true, //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+          showButton: true, //显示定位按钮，默认：true
+          buttonPosition: "LB", //定位按钮停靠位置，默认：'LB'，左下角
+          buttonOffset: new AMap.Pixel(10, 20), //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+          showMarker: true, //定位成功后在定位到的位置显示点标记，默认：true
+          showCircle: true, //定位成功后用圆圈表示定位精度范围，默认：true
+          panToLocation: true, //定位成功后将定位到的位置作为地图中心点，默认：true
+          zoomToAccuracy: true, //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        });
+        mapObj.addControl(geolocation);
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, "complete", onComplete); //返回定位信息
+        AMap.event.addListener(geolocation, "error", onError); //返回定位出错信息
+      });
+      // 获取当前城市信息
+      // AMap.plugin("AMap.CitySearch", function () {
+      //   var citySearch = new AMap.CitySearch();
+      //   citySearch.getLocalCity(function (status, result) {
+      //     if (status === "complete" && result.info === "OK") {
+      //       // 查询成功，result即为当前所在城con
+      //       console.log(status,result)
+      //     }
+      //   });
+      // });
+      //实时路况图层
+      var trafficLayer = new AMap.TileLayer.Traffic({
+        zIndex: 10,
+      });
+      var infoWindow = new AMap.InfoWindow({
+        //创建信息窗体
+        isCustom: true, //使用自定义窗体
+        content: "<div>巴巴鲁</div>", //信息窗体的内容可以是任意html片段
+        offset: new AMap.Pixel(16, -45),
+      });
+      var onMarkerClick = function (e) {
+        infoWindow.open(map, e.target.getPosition()); //打开信息窗体
+        //e.target就是被点击的Marker
+      };
+      // 添加点标记
+      var marker = new AMap.Marker({
+        position: [120.234459,30.213544], //位置
+      });
+      map.add(marker); //添加到地图
+      map.add(trafficLayer); //添加图层到地图
+      marker.on("click", onMarkerClick); //绑定click事件
+      var currentCenter = map.getCenter();
+      console.log(currentCenter);
+    },
+    destroyMap() {
+      this.map && this.map.destroy();
+    },
+  },
+  destroyed() {
+    this.destroyMap();
+  },
 };
 </script>
 
 <style lang="scss">
+#container {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 50px;
+}
 .about {
   min-height: calc(100vh - 126px);
   padding: 0px 2%;

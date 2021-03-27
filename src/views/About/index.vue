@@ -113,7 +113,7 @@ export default {
       map.add(trafficLayer); //添加图层到地图
       marker.on("click", onMarkerClick); //绑定click事件
       var currentCenter = map.getCenter();
-      console.log(currentCenter);
+      // console.log(currentCenter);
     },
     destroyMap() {
       this.map && this.map.destroy();

@@ -14,31 +14,11 @@
         >
           <div
             class="nav-item"
-            :class="{ active: urlpath == '/' }"
-            @click="togglePath('/')"
+            :class="{ active: urlpath == item.path }"
+            @click="togglePath(item.path)"
+            v-for="(item,index) in navList"
           >
-            首页
-          </div>
-          <div
-            class="nav-item"
-            :class="{ active: urlpath == '/navigation' }"
-            @click="togglePath('/navigation')"
-          >
-            导航
-          </div>
-          <div
-            class="nav-item"
-            :class="{ active: urlpath == '/note' }"
-            @click="togglePath('/note')"
-          >
-            笔记
-          </div>
-          <div
-            class="nav-item"
-            :class="{ active: urlpath == '/about' }"
-            @click="togglePath('/about')"
-          >
-            关于
+            {{item.name}}
           </div>
         </div>
         <button
@@ -47,7 +27,6 @@
           id="nav-btn"
           @click="status = !status"
         >
-          <!--按钮-->
           <span></span>
           <span></span>
           <span></span>
@@ -65,15 +44,18 @@ export default {
   data() {
     return {
       status: false,
+      navList:[
+        { name:'首页',path:'/'},
+        { name:'导航',path:'/navigation'},
+        { name:'笔记',path:'/note'},
+        { name:'关于',path:'/about'},
+      ]
     };
   },
   computed: {
     urlpath() {
       return this.$route.path;
     },
-    // getter_text(){
-    //   return this.$store.getters.getterCount
-    // }
   },
   watch: {},
   created() {},
@@ -182,7 +164,7 @@ export default {
   font-weight: bold;
   height: 60px;
   text-shadow: 1px 1px 2px rgb(131, 131, 131);
-  /* transition: all 0.5s; */
+  transition: all 0.5s;
 }
 
 .nav-btn {

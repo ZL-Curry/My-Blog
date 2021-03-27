@@ -7,12 +7,17 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-import mavonEditor from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
-Vue.use(mavonEditor)
+// import mavonEditor from 'mavon-editor'
+// import 'mavon-editor/dist/css/index.css'
+// Vue.use(mavonEditor)
 
-import hljs from 'highlight.js'
 import 'highlight.js/styles/googlecode.css' // 样式文件
+import hljs from 'highlight.js'
+hljs.highlightCode = function () { 
+	//自定义highlightCode方法，将只执行一次的逻辑去掉
+	let blocks = document.querySelectorAll('pre code');
+	[].forEach.call(blocks, hljs.highlightBlock);
+};
 Vue.directive('highlight', function (el) {
   let blocks = el.querySelectorAll('pre code')
   blocks.forEach((block) => {

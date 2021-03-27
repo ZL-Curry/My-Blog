@@ -44,12 +44,7 @@ const routes = [
         meta: {
           title: '导航'
         }
-      },
-      // {
-      //   path: '/wang',
-      //   name: 'wang',
-      //   component: () => import('../views/wangeditor/')
-      // }
+      }
     ]
   },
 
@@ -63,10 +58,9 @@ const routes = [
     name: 'login',
     component: () => import('../views/user/login.vue')
   },
-  // ,
   // {
-  //   path: '/rich',
-  //   name: 'rich',
+  //   path: '/richtext',
+  //   name: 'richtext',
   //   component: () => import('../views/richtext.vue')
   // },
 ]

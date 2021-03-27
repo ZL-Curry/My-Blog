@@ -1,7 +1,13 @@
 <template>
   <div id="app">
     <router-view />
-    <button v-if="topheight" id="myBtn" @click="backtop">UP</button>
+    <div
+      v-if="topheight"
+      id="myBtn"
+      class="iconfont iconfanhuidingbu"
+      @click="backtop"
+    ></div>
+    <Player/>
   </div>
 </template>
 <script scoped>
@@ -17,20 +23,22 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.showbtn, true);
+    let text = `
+      ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗   ██╗
+      ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║   ██║
+      ██████╔╝███████║██████╔╝███████║██║     ██║   ██║
+      ██╔══██╗██╔══██║██╔══██╗██╔══██║██║     ██║   ██║
+      ██████╔╝██║  ██║██████╔╝██║  ██║███████╗╚██████╔╝
+      ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝
+    `;
+    console.log(`%c${text}`, "color: #9fdd0e");
   },
   methods: {
-    
-    // 显示回到顶部按钮
     showbtn() {
       let that = this;
-      let scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       that.scrollTop = scrollTop;
-      this.scrollTop >= 300
-        ? (this.topheight = true)
-        : (this.topheight = false);
+      this.scrollTop >= 300 ? (this.topheight = true) : (this.topheight = false);
     },
     /**
      * 回到顶部功能实现过程：
@@ -54,64 +62,11 @@ export default {
     },
   },
   async created() {
-       if(document.getElementById('Loading'))document.getElementById('Loading').remove();
+    if (document.getElementById("Loading"))
+      document.getElementById("Loading").remove();
   },
 };
-// import  Headerbar  from "./views/headerbar/headerbar";
-// export default {
-//   data() {
-//     return {
-
-//        activeIndex: this.$route.path,
-//     };
-//   },
-//   created() {
-//     // console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
-//   },
-//   components: {
-//     Headerbar
-//   },
-//   mounted() {
-//     var toTop = document.getElementById("myBtn");
-//     //    默认显示为隐藏
-//     toTop.style.display = "none";
-//     // 按钮点击事件
-//     toTop.onclick = function () {
-//       // 获取滚动条举例顶部的距离
-//       var timer = setInterval(function () {
-//         var backTop =
-//           document.documentElement.scrollTop || document.body.scrollTop;
-//         // 越来越慢效果
-//         var speedTop = backTop / 5;
-//         document.documentElement.scrollTop = backTop - speedTop;
-//         if (backTop == 0) {
-//           clearInterval(timer);
-//         }
-//       }, 30);
-//     };
-//     window.onscroll = function () {
-//       var backTop =
-//         document.documentElement.scrollTop || document.body.scrollTop;
-//       var nav = document.querySelector(".headers");
-
-//       if (backTop < 60) {
-//         // nav.style.position = "sticky";
-//         // nav.style.zIndex = "100";
-//         // nav.style.display = "block";
-//         // nav.style.animation = "spotlight .6s";
-//         // toTop.style.display = "none";
-//       } else if (backTop > 30) {
-//         nav.style.display = "none";
-//         toTop.style.display = "block";
-//       }
-//     };
-//   },
-//   methods: {
-//     handleSelect(key, keyPath) {
-//       this.$router.push(key);
-//     },
-//   },
-// };
+// console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
 </script>
 <style lang="scss" scoped>
 * {
@@ -126,6 +81,17 @@ export default {
   overflow: hidden;
 }
 #myBtn {
-  background: $theme-color;
+  font-size: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  color: rgb(10, 140, 216);
 }
 </style>

@@ -76,20 +76,7 @@ export default {
 };
 </script>
 <style lang="scss">
-#myBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%; /* 圆角 */
-  width: 50px;
-  height: 50px;
-  background: rgb(238, 138, 138);
-}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;

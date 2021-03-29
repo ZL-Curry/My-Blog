@@ -17,6 +17,7 @@
             :class="{ active: urlpath == item.path }"
             @click="togglePath(item.path)"
             v-for="(item,index) in navList"
+            :key="index"
           >
             {{item.name}}
           </div>

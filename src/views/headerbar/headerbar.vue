@@ -16,10 +16,10 @@
             class="nav-item"
             :class="{ active: urlpath == item.path }"
             @click="togglePath(item.path)"
-            v-for="(item,index) in navList"
+            v-for="(item, index) in navList"
             :key="index"
           >
-            {{item.name}}
+            {{ item.name }}
           </div>
         </div>
         <button
@@ -45,12 +45,14 @@ export default {
   data() {
     return {
       status: false,
-      navList:[
-        { name:'首页',path:'/'},
-        { name:'导航',path:'/navigation'},
-        { name:'笔记',path:'/note'},
-        { name:'关于',path:'/about'},
-      ]
+      navList: [
+        { name: "Home", path: "/" },
+        { name: "Navigation", path: "/navigation" },
+        { name: "Note", path: "/note" },
+        { name: "Infinity", path: "/infinity" },
+        { name: "Beyond", path: "/beyond" },
+        { name: "About", path: "/about" },
+      ],
     };
   },
   computed: {
@@ -96,7 +98,7 @@ export default {
 </script>
 
 <style  lang='scss'>
-.nav{
+.nav {
   height: 65px;
   width: 100%;
 }

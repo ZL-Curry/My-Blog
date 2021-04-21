@@ -43,6 +43,13 @@ const routes = [
         meta: {
           title: '导航'
         }
+      },{
+        path: '/notedetail',
+        name: 'notedetail',
+        component: () => import('../components/noteDetail'),
+        meta: {
+          title: '文章详情'
+        }
       }
     ]
   },

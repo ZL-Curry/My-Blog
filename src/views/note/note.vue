@@ -24,12 +24,6 @@ export default {
 </script>
 
 <style  scoped>
-<<<<<<< HEAD
-/* .note /deep/ .box-card {
-  background: #ccc;
-} */
-.note {
-=======
 .note{
   
 }
@@ -38,7 +32,6 @@ export default {
 }
 .noteChild {
   width: 70%;
->>>>>>> 2cd2b6f364abcd587be5b3691753a940af03a818
 }
 .weight{
   font-weight: 600px;

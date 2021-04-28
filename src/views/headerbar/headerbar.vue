@@ -45,14 +45,6 @@ export default {
   data() {
     return {
       status: false,
-<<<<<<< HEAD
-      navList:[
-        { name:'首页',path:'/'},
-        { name:'导航',path:'/navigation'},
-        { name:'笔记',path:'/note'},
-        { name:'关于',path:'/about'},
-      ]
-=======
       navList: [
         { name: "Home", path: "/" },
         { name: "Navigation", path: "/navigation" },
@@ -61,7 +53,6 @@ export default {
         { name: "Beyond", path: "/beyond" },
         { name: "About", path: "/about" },
       ],
->>>>>>> 2cd2b6f364abcd587be5b3691753a940af03a818
     };
   },
   computed: {
@@ -107,11 +98,7 @@ export default {
 </script>
 
 <style  lang='scss'>
-<<<<<<< HEAD
-.nav{
-=======
 .nav {
->>>>>>> 2cd2b6f364abcd587be5b3691753a940af03a818
   height: 65px;
   width: 100%;
 }

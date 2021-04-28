@@ -34,11 +34,7 @@
         RandomNumber
       }}</span>
     </div>
-<<<<<<< HEAD
-    <el-button type="primary" class="btn" round @click="login">注册</el-button>
-=======
      <el-button type="primary" class="btn" round @click="login">注册</el-button>
->>>>>>> 2cd2b6f364abcd587be5b3691753a940af03a818
     <p>还没账号？<a href="javascript:;" @click="navTo('/reg')">去注册</a></p>
   </div>
 </template>
@@ -186,11 +182,7 @@ html {
 #all {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-<<<<<<< HEAD
-  background: $theme-linear;
-=======
   background:$theme-linear;
->>>>>>> 2cd2b6f364abcd587be5b3691753a940af03a818
   flex-direction: column;
   align-items: center;
   width: 100%;

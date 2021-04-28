@@ -52,7 +52,7 @@ export default {
       // let map = this.map;
       var map = new AMap.Map("container", {
         zoom: 22, //级别
-        center: [114.36236,33.000915], //中心点坐标
+        center: [120.234459,30.213544], //中心点坐标
         mapStyle: "amap://styles/fresh",
         pitch: 27, // 地图俯仰角度，有效范围 0 度- 83 度
         // viewMode: "1D", //使用3D视图

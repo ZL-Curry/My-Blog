@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <el-card class="box-card" v-for="item in notes" >
+      <el-card class="box-card" v-for="(item,index) in notes" :key="index">
         <div slot="header" class="clearfix">
           <h3>{{ item.title }}</h3>
         </div>

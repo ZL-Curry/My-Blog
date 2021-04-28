@@ -1,12 +1,22 @@
 <template>
   <div class="blog">
-    <div class="swiper">
+    <!-- <div class="swiper">
       <el-carousel :interval="5000" arrow="hover">
         <el-carousel-item v-for="(item, index) in url" :key="index">
           <el-image :src="item.imgurl" fit style="width: 100%"></el-image>
         </el-carousel-item>
       </el-carousel>
-    </div>
+    </div> -->
+    <el-calendar>
+  <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
+  <template
+    slot="dateCell"
+    slot-scope="{date, data}">
+    <p :class="data.isSelected ? 'is-selected' : ''">
+      {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : ''}}
+    </p>
+  </template>
+</el-calendar>
     <div class="daohang">
       <el-button
       plain

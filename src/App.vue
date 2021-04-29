@@ -11,7 +11,7 @@
   </div>
 </template>
 <script scoped>
-import Player from "zw-player";
+import Player from "zw-player"; // 仲威音乐播放器
 import {ConsoleLog} from "@/common/ConsoleLog.js"
 export default {
   components: {

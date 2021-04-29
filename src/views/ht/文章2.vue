@@ -4,6 +4,7 @@
       <div
         class=""
         v-for="(item, index) in tabs"
+         :key="index"
         :class="seeThis == index ? 'active' : ''"
       >
         <!-- <a href="javascript:void(0)" @click="goAnchor(index)">{{ item }}</a> -->
@@ -14,6 +15,7 @@
     <div :class="seeThis == index ? 
     'active' : ''"
     v-for="(item1,index) in box" 
+    :key="index"
     class="box" 
     :id="'anchor'+index">{{item1}}</div>
     <!-- <div class="box" id="anchor1">block1</div>

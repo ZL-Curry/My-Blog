@@ -3,7 +3,7 @@
     <blockquote>
       <p class="weight">记录生活,定格瞬间</p>
     </blockquote>
-    <notes />
+    <notes class="noteChild" ref="note"/>
   </div>
 </template>
 
@@ -24,10 +24,14 @@ export default {
 </script>
 
 <style  scoped>
-/* .note /deep/ .box-card {
-  background: #ccc;
-} */
-.note {
+.note{
+  
+}
+.note /deep/ .box-card {
+  background: rgb(70, 195, 218);
+}
+.noteChild {
+  width: 70%;
 }
 .weight{
   font-weight: 600px;

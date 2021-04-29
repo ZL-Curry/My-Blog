@@ -11,8 +11,7 @@
   </div>
 </template>
 <script scoped>
-import Player from "zw-player"; // 仲威音乐播放器
-import {ConsoleLog} from "@/common/ConsoleLog.js"
+import Player from "zw-player";
 export default {
   components: {
     Player,
@@ -24,16 +23,15 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.showbtn, true);
-    // let text = `
-    //   ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗   ██╗
-    //   ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║   ██║
-    //   ██████╔╝███████║██████╔╝███████║██║     ██║   ██║
-    //   ██╔══██╗██╔══██║██╔══██╗██╔══██║██║     ██║   ██║
-    //   ██████╔╝██║  ██║██████╔╝██║  ██║███████╗╚██████╔╝
-    //   ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝
-    // `;
-    // console.log(`%c${text}`, "color: #9fdd0e");
-    ConsoleLog
+    let text = `
+      ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗   ██╗
+      ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║   ██║
+      ██████╔╝███████║██████╔╝███████║██║     ██║   ██║
+      ██╔══██╗██╔══██║██╔══██╗██╔══██║██║     ██║   ██║
+      ██████╔╝██║  ██║██████╔╝██║  ██║███████╗╚██████╔╝
+      ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝
+    `;
+    console.log(`%c${text}`, "color: #9fdd0e");
   },
   methods: {
     showbtn() {

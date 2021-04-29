@@ -9,22 +9,23 @@ const routes = [
   {
     path: '/',
     redirect:'/navigation',
+    name: 'home',
     component: home,
     children: [
       {
         path: '',
-        name: 'index',
+        name: 'home',
         component: () => import('../views/home/'),
         meta:{
           keepAlive:true
         }
       },
       {
-        path: '/about',
-        name: 'about',
-        component: () => import('../views/About/'),
+        path: '/navigation',
+        name: 'navigation',
+        component: () => import('../views/nav/'),
         meta: {
-          title: '关于'
+          title: 'navigation'
         }
       },
       {
@@ -37,20 +38,31 @@ const routes = [
         }
       },
       {
-        path: '/navigation',
-        name: '导航',
-        component: () => import('../views/nav/'),
+        path: '/infinity',
+        name: 'infinty',
+        component: () => import('../views/infinity/infinity.vue'),
         meta: {
-          title: '导航'
+          title: 'infinty',
+          keepAlive:true
         }
-      },{
-        path: '/notedetail',
-        name: 'notedetail',
-        component: () => import('../components/noteDetail'),
+      },
+      {
+        path: '/beyond',
+        name: 'beyond',
+        component: () => import('../views/beyond/beyond.vue'),
         meta: {
-          title: '文章详情'
+          title: 'beyond',
+          keepAlive:true
         }
-      }
+      },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('../views/About/'),
+        meta: {
+          title: 'about'
+        }
+      },
     ]
   },
 
@@ -64,6 +76,11 @@ const routes = [
     name: 'login',
     component: () => import('../views/user/login.vue')
   },
+  // {
+  //   path: '/richtext',
+  //   name: 'richtext',
+  //   component: () => import('../views/richtext.vue')
+  // },
 ]
 
 const router = new VueRouter({

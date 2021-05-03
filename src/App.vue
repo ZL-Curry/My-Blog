@@ -11,10 +11,10 @@
   </div>
 </template>
 <script scoped>
-import Player from "zw-player";
+// import Player from "zw-player";
 export default {
   components: {
-    Player,
+    // Player,
   },
   data() {
     return {

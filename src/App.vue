@@ -7,7 +7,7 @@
       class="iconfont iconfanhuidingbu"
       @click="backtop"
     ></div>
-    <Player/>
+    <!-- <Player/> -->
   </div>
 </template>
 <script scoped>
@@ -23,22 +23,52 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.showbtn, true);
-    let text = `
-      ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗   ██╗
-      ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║   ██║
-      ██████╔╝███████║██████╔╝███████║██║     ██║   ██║
-      ██╔══██╗██╔══██║██╔══██╗██╔══██║██║     ██║   ██║
-      ██████╔╝██║  ██║██████╔╝██║  ██║███████╗╚██████╔╝
-      ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝
-    `;
+    let text = window.$$consoleText;
     console.log(`%c${text}`, "color: #9fdd0e");
+    // 重写console.log
+    console.log = (function (oriLogFunc) {
+      return function () {
+        let showText = "BABALU";
+        try {
+          if (arguments[0] == "error") {
+            oriLogFunc.call(
+              console,
+              `%c ${showText} `,
+              "color: white; background-color: red",
+              ...arguments
+            );
+          } else if (arguments[0] == "success") {
+            oriLogFunc.call(
+              console,
+              `%c ${showText} `,
+              "color: white; background-color: rgb(110,219,99)",
+              ...arguments
+            );
+          } else {
+            oriLogFunc.call(
+              console,
+              `%c ${showText} `,
+              "color: white; background-color: rgb(38,188,213)",
+              ...arguments
+            );
+          }
+        } catch (e) {
+          console.error("console.log error", e);
+        }
+      };
+    })(console.log);
   },
   methods: {
     showbtn() {
       let that = this;
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
       that.scrollTop = scrollTop;
-      this.scrollTop >= 300 ? (this.topheight = true) : (this.topheight = false);
+      this.scrollTop >= 300
+        ? (this.topheight = true)
+        : (this.topheight = false);
     },
     /**
      * 回到顶部功能实现过程：
@@ -62,17 +92,41 @@ export default {
     },
   },
   async created() {
+    // 第一次进入网页的loading状态
     if (document.getElementById("Loading"))
       document.getElementById("Loading").remove();
   },
 };
-// console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 * {
   margin: 0;
   padding: 0;
 }
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 12px;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $theme-color;
+  border-radius: 12px;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
 .icon {
   width: 1em;
   height: 1em;
@@ -92,6 +146,6 @@ export default {
   padding: 10px;
   width: 50px;
   height: 50px;
-  color: rgb(10, 140, 216);
+  color: $theme-color;
 }
 </style>

@@ -14,19 +14,23 @@
             :class="{ act: changeActiveText == index }"
           >
             <h4>{{ item.title }}</h4>
-            <p>{{ item.createdTime || '' }}</p>
+            <p>{{ item.createdTime || "" }}</p>
           </div>
           <!-- 文本 -->
           <div class="text_content" @click="lookDetail(item)">
             <p>{{ item.context }}</p>
           </div>
         </el-card>
+        <div style="height:400px;">
+        </div>
       </div>
       <!-- 右侧 -->
-      <AsideList 
-        @changeActive="changeSelectStatus($event)" 
-        :AlideList="AlideList" ref="refAsideList" 
+      <AsideList
+        @changeActive="changeSelectStatus($event)"
+        :AlideList="AlideList"
+        ref="refAsideList"
         :changeActiveTexts="changeActiveText"
+        :topArr="topArr"
       />
     </div>
   </div>
@@ -42,39 +46,59 @@ export default {
   props: {},
   data() {
     return {
-      changeActiveText:'',
+      changeActiveText: "",
       AlideList: window.$$learn_note,
+      topArr: [],
     };
   },
   computed: {},
   watch: {},
   created() {},
   mounted() {
-    const jump = document.querySelectorAll(".left h4")
-    const topArr = []
+    const jump = document.querySelectorAll(".left h4");
     for (let i = 0; i < jump.length; i++) {
-      topArr.push(jump[i].offsetTop)
+      this.topArr.push(jump[i].offsetTop);
     }
-    window.addEventListener('scroll', () => {
-      const current_offset_top = window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
-      for (let i = 0; i < topArr.length; i++) {
-        if (topArr[i]  < current_offset_top&&  current_offset_top < topArr[i + 1] ) { // 根据滚动距离判断应该滚动到第几个导航的位置
-          // console.log(current_offset_top,topArr[i])
-          this.changeActiveText = i 
-          break
-        }
-      }
-    }, true)
+    window.addEventListener(
+      "scroll",
+      this.debounce(this.handelScroll, 10),
+      true
+    );
   },
   methods: {
+    debounce(fn, wait) {
+      var timer = null;
+      return function () {
+        if (timer !== null) {
+          clearTimeout(timer);
+        }
+        timer = setTimeout(fn, wait);
+      };
+    },
+    handelScroll() {
+      let topArr = this.topArr;
+      const current_offset_top =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      let index = 0;
+      for (let i = 0, len = this.topArr.length; i < len; i++) {
+        if (
+          current_offset_top + 5 >= topArr[i] &&
+          current_offset_top < topArr[i + 1]
+        ) {
+          // 根据滚动距离判断应该滚动到第几个导航的位置
+          index = i;
+        }
+      }
+      this.changeActiveText = index;
+    },
     lookDetail(item) {
       this.$router.push({ name: "noteDetail", params: { item } });
     },
-    changeSelectStatus(index){
-      this.changeActiveText = index
-    }
+    changeSelectStatus(index) {
+      this.changeActiveText = index;
+    },
   },
 };
 </script>

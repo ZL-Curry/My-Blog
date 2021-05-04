@@ -8,7 +8,7 @@
           :class="{ act: changeActiveText == index }"
         >
           <h4>{{ item.title }}</h4>
-          <p>{{ item.createdTime || '' }}</p>
+          <p>{{ item.createdTime || "" }}</p>
         </div>
         <div class="textContext" v-html="item.text"></div>
         <el-image
@@ -24,7 +24,12 @@
         </el-image>
       </el-card>
     </div>
-    <AsideList @changeActive="changeSelectStatus($event)" :AlideList="notes" :changeActiveTexts= 'changeActiveText'/>
+    <AsideList
+      @changeActive="changeSelectStatus($event)"
+      :AlideList="notes"
+      :changeActiveTexts="changeActiveText"
+      :topArr="topArr"
+    />
   </div>
 </template>
 
@@ -38,15 +43,54 @@ export default {
   },
   data() {
     return {
-      changeActiveText:"",
+      changeActiveText: "",
       notes: window.$$note,
+      topArr: [],
     };
   },
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    const jump = document.querySelectorAll(".blod_text h4");
+    for (let i = 0; i < jump.length; i++) {
+      this.topArr.push(jump[i].offsetTop);
+    }
+    window.addEventListener(
+      "scroll",
+      this.debounce(this.handelScroll, 10),
+      true
+    );
+  },
+
   methods: {
+    debounce(fn, wait) {
+      var timer = null;
+      return function () {
+        if (timer !== null) {
+          clearTimeout(timer);
+        }
+        timer = setTimeout(fn, wait);
+      };
+    },
+    handelScroll() {
+      let topArr = this.topArr;
+      const current_offset_top =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      let index = 0;
+      for (let i = 0, len = this.topArr.length; i < len; i++) {
+        if (
+          current_offset_top + 5 >= topArr[i] &&
+          current_offset_top < topArr[i + 1]
+        ) {
+          // 根据滚动距离判断应该滚动到第几个导航的位置
+          index = i;
+        }
+      }
+      this.changeActiveText = index;
+    },
     changeSelectStatus(index) {
       this.changeActiveText = index;
     },

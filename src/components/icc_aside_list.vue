@@ -35,6 +35,10 @@ export default {
     changeActiveTexts: {
       default: "",
     },
+    topArr:{
+      type: Array,
+      default:[]
+    }
   },
   data() {
     return {};
@@ -45,13 +49,15 @@ export default {
   mounted() {},
   methods: {
     asideClick(index) {
-      var elmnt = document.querySelectorAll("h4")[index];
-      console.log(elmnt.offsetTop);
-      console.log(elmnt.offsetTop);
-      elmnt.scrollIntoView({
+      // var elmnt = document.querySelectorAll("h4")[index];
+      // elmnt.scrollIntoView({
+      //   behavior: "smooth",
+      //   block: "center",
+      //   inline: "nearest",
+      // });
+      window.scrollTo({
+        top: this.topArr[index],
         behavior: "smooth",
-        block: "center",
-        inline: "nearest",
       });
       this.$emit("changeActive", index);
     },

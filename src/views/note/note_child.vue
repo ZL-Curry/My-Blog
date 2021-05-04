@@ -24,7 +24,7 @@
         </el-image>
       </el-card>
     </div>
-    <AsideList @changeActive="changeSelectStatus($event)" :AlideList="notes" />
+    <AsideList @changeActive="changeSelectStatus($event)" :AlideList="notes" :changeActiveTexts= 'changeActiveText'/>
   </div>
 </template>
 

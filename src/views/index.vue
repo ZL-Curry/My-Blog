@@ -13,8 +13,14 @@
       </transition>
       </keep-alive>
     </div>
+    
     <!-- 左侧 -->
-    <el-footer><a href="http://wpa.qq.com/msgrd?v=3&uin=1697362616&site=qq&menu=yes" target="_blank"><span>QQ:1697362616</span></a> | <a href="https://github.com/ZL-Curry/" target='_blank'><span>GitHub</span></a></el-footer>
+    <el-footer>
+      <img src="@/assets/img/weixi_2_code.jpg" v-show="imgShowStatus" width="200" alt="微信二维码" class="wx_2_code_img">
+      <a href="http://wpa.qq.com/msgrd?v=3&uin=1697362616&site=qq&menu=yes" target="_blank"><span>QQ:1697362616</span></a> | 
+      <a href="javascript:;" v-on:mouseover="onMouserover" v-on:mouseout="onMouseout" class="wx_2_code_text"><span class="iconfont iconweixin1" > Wechat</span></a> | 
+      <a href="https://github.com/ZL-Curry/" target='_blank'><span class="iconfont iconhuaban88"> GitHub</span></a>
+    </el-footer>
   </div>
 </template>
 <script>
@@ -22,6 +28,7 @@ import Headerbar from "../views/headerbar/headerbar";
 export default {
   data() {
     return {
+      imgShowStatus: false,
       activeIndex: this.$route.path,
     };
   },
@@ -32,45 +39,20 @@ export default {
     Headerbar,
   },
   mounted() {
-    // var toTop = document.getElementById("myBtn");
-    // //    默认显示为隐藏
-    // toTop.style.display = "none";
-    // // 按钮点击事件
-    // toTop.onclick = function () {
-    //   // 获取滚动条举例顶部的距离
-    //   var timer = setInterval(function () {
-    //     var backTop =
-    //       document.documentElement.scrollTop || document.body.scrollTop;
-    //     // 越来越慢效果
-    //     var speedTop = backTop / 5;
-    //     document.documentElement.scrollTop = backTop - speedTop;
-    //     if (backTop == 0) {
-    //       clearInterval(timer);
-    //     }
-    //   }, 30);
-    // };
-    // window.onscroll = function () {
-    //   var backTop =
-    //     document.documentElement.scrollTop || document.body.scrollTop;
-    //   var nav = document.querySelector(".headers");
-
-    //   if (backTop < 60) {
-    //     // nav.style.position = "sticky";
-    //     // nav.style.zIndex = "100";
-    //     // nav.style.display = "block";
-    //     // nav.style.animation = "spotlight .6s";
-    //     // toTop.style.display = "none";
-    //   } else if (backTop > 30) {
-    //     nav.style.display = "none";
-    //     toTop.style.display = "block";
-    //   }
-    // };
+   
   },
   methods: {
     handleSelect(key, keyPath) {
       this.$router.push(key);
     },
-    
+    // 鼠标移入事件
+    onMouserover(){
+      this.imgShowStatus = true
+    },
+    // 鼠标移出事件
+    onMouseout(){
+      this.imgShowStatus = false
+    }
   },
 };
 </script>
@@ -115,9 +97,16 @@ export default {
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  .wx_2_code_img{
+    position: absolute;
+    top: -210px;
+    left: auto;
+  }
   span{
     color: black;
     padding: 0px 20px;
+    font-size: 20px;
   }
 }
 

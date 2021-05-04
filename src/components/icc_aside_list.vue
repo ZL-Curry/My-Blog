@@ -1,15 +1,23 @@
 <template>
   <div class="asideList">
-    <el-card class="box-card" :body-style = '{backgroundColor:"#f5f5f5",height:"500px",overflowY:"auto",scrollbar:{width:"7px"}}'>
+    <el-card
+      class="box-card"
+      :body-style="{
+        backgroundColor: '#f5f5f5',
+        height: '500px',
+        overflowY: 'auto',
+        scrollbar: { width: '7px' },
+      }"
+    >
       <div slot="header" class="clearfix">
         <h3>目录</h3>
       </div>
       <div
-        @click="asideClick(index)"
-        :class="{ act: changeActiveText == index }"
         v-for="(item, index) in AlideList"
         :key="index"
         class="text item"
+        :class="{ act: changeActiveTexts == index }"
+        @click="asideClick(index)"
       >
         <h4>{{ item.title.split("").slice(0, 20).join("") }}...</h4>
       </div>
@@ -24,11 +32,12 @@ export default {
       type: Array,
       default: [],
     },
+    changeActiveTexts: {
+      default: "",
+    },
   },
   data() {
-    return {
-      changeActiveText: "",
-    };
+    return {};
   },
   computed: {},
   watch: {},
@@ -37,13 +46,14 @@ export default {
   methods: {
     asideClick(index) {
       var elmnt = document.querySelectorAll("h4")[index];
+      console.log(elmnt.offsetTop);
+      console.log(elmnt.offsetTop);
       elmnt.scrollIntoView({
         behavior: "smooth",
         block: "center",
         inline: "nearest",
       });
-      this.changeActiveText = index;
-      this.$emit('changeActive',index)
+      this.$emit("changeActive", index);
     },
   },
 };

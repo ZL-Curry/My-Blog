@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="homelist">
+    <div class="homelist" id="homelist">
       <div class="left">
         <el-card
           class="box-card"
@@ -23,7 +23,11 @@
         </el-card>
       </div>
       <!-- 右侧 -->
-      <AsideList @changeActive="changeSelectStatus($event)" :AlideList="AlideList" ref="refAsideList"/>
+      <AsideList 
+        @changeActive="changeSelectStatus($event)" 
+        :AlideList="AlideList" ref="refAsideList" 
+        :changeActiveTexts="changeActiveText"
+      />
     </div>
   </div>
 </template>
@@ -38,7 +42,7 @@ export default {
   props: {},
   data() {
     return {
-      changeActiveText:"",
+      changeActiveText:'',
       AlideList: window.$$learn_note,
     };
   },
@@ -46,7 +50,23 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    
+    const jump = document.querySelectorAll(".left h4")
+    const topArr = []
+    for (let i = 0; i < jump.length; i++) {
+      topArr.push(jump[i].offsetTop)
+    }
+    window.addEventListener('scroll', () => {
+      const current_offset_top = window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      for (let i = 0; i < topArr.length; i++) {
+        if (topArr[i]  < current_offset_top&&  current_offset_top < topArr[i + 1] ) { // 根据滚动距离判断应该滚动到第几个导航的位置
+          // console.log(current_offset_top,topArr[i])
+          this.changeActiveText = i 
+          break
+        }
+      }
+    }, true)
   },
   methods: {
     lookDetail(item) {
@@ -97,6 +117,10 @@ a {
   word-wrap: break-word;
   overflow: hidden;
   word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .home {
   width: 1200px;

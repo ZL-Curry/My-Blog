@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <div class="left">
-      <div class="card" v-for="item in 10">
+      <div class="card" 
+        v-for="(item,index) in 10"
+          :key="index"
+        >
         <h4>路由拦截器</h4>
         <br />
         <h5>请求拦截器</h5>
@@ -32,6 +35,7 @@
           v-for="(item, index) in asideTexts"
           @click="asideClick(index)"
           :class="{ act: changeActiveText == index }"
+          :key="index"
         >
           {{ item }}
         </h5>

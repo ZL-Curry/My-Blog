@@ -14,7 +14,6 @@
       </keep-alive>
     </div>
     <!-- 左侧 -->
-
     <el-footer><a href="http://wpa.qq.com/msgrd?v=3&uin=1697362616&site=qq&menu=yes" target="_blank"><span>QQ:1697362616</span></a> | <a href="https://github.com/ZL-Curry/" target='_blank'><span>GitHub</span></a></el-footer>
   </div>
 </template>

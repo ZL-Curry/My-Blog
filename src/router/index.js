@@ -21,6 +21,14 @@ const routes = [
         }
       },
       {
+        path: 'noteDetail',
+        name: 'noteDetail',
+        component: () => import('@/components/icc_note_detail.vue'),
+        meta:{
+          keepAlive:true
+        }
+      },
+      {
         path: '/navigation',
         name: 'navigation',
         component: () => import('../views/nav/'),

@@ -21,6 +21,22 @@ const routes = [
         }
       },
       {
+        path: 'text2',
+        name: 'home',
+        component: () => import('../views/ht/text2'),
+        meta:{
+          keepAlive:true
+        }
+      },
+      {
+        path: 'noteDetail',
+        name: 'noteDetail',
+        component: () => import('@/components/icc_note_detail.vue'),
+        meta:{
+          keepAlive:true
+        }
+      },
+      {
         path: '/navigation',
         name: 'navigation',
         component: () => import('../views/nav/'),

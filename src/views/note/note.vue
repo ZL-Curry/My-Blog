@@ -28,7 +28,7 @@ export default {
   
 }
 .note /deep/ .box-card {
-  background: rgb(70, 195, 218);
+  /* background: rgba(103, 194, 58, 0.65); */
 }
 .noteChild {
   width: 70%;
@@ -37,5 +37,10 @@ export default {
   font-weight: 600px;
   font-size: 20px;
   margin: 10px 5px;
+}
+@media all and (max-width: 768px) {
+  .noteChild {
+    width: 100%;
+  }
 }
 </style>

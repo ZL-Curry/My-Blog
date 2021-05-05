@@ -19,7 +19,7 @@
             v-for="(item, index) in navList"
             :key="index"
           >
-            {{ item.name }}
+            {{ item.zh_name }}
           </div>
         </div>
         <button
@@ -46,12 +46,12 @@ export default {
     return {
       status: false,
       navList: [
-        { name: "Home", path: "/" },
-        { name: "Navigation", path: "/navigation" },
-        { name: "Note", path: "/note" },
-        { name: "Infinity", path: "/infinity" },
-        { name: "Beyond", path: "/beyond" },
-        { name: "About", path: "/about" },
+        { name: "Home", path: "/", zh_name: '技术笔记'},
+        { name: "Navigation", path: "/navigation" , zh_name: '导航' },
+        { name: "Note", path: "/note", zh_name: '杂记'},
+        { name: "Infinity", path: "/infinity", zh_name: '无限'},
+        { name: "Beyond", path: "/beyond", zh_name: '年轻'},
+        { name: "About", path: "/about", zh_name: '关于我'},
       ],
     };
   },
@@ -152,6 +152,7 @@ export default {
   line-height: 60px;
   text-align: center;
   width: 100px;
+  font-weight: 700;
   background-color: rgba(255, 254, 254);
 }
 .nav-item.active {

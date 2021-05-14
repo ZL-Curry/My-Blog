@@ -13,7 +13,6 @@
       </transition>
       </keep-alive>
     </div>
-    
     <!-- 左侧 -->
     <el-footer>
       <img src="@/assets/img/weixi_2_code.jpg" v-show="imgShowStatus" width="200" alt="微信二维码" class="wx_2_code_img">
@@ -33,7 +32,7 @@ export default {
     };
   },
   created() {
-    // console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
+    console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
   },
   components: {
     Headerbar,

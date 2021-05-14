@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import VueCompositionApi from '@vue/composition-api'
+Vue.use(VueCompositionApi)
+
+import './index.css'
+
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);

@@ -1,7 +1,7 @@
 <template>
   <div class="note">
     <blockquote>
-      <p class="weight">记录生活,定格瞬间</p>
+      <p class="text-3xl">记录生活,定格瞬间</p>
     </blockquote>
     <notes class="noteChild" ref="note"/>
   </div>
@@ -33,11 +33,7 @@ export default {
 .noteChild {
   width: 70%;
 }
-.weight{
-  font-weight: 600px;
-  font-size: 20px;
-  margin: 10px 5px;
-}
+
 @media all and (max-width: 768px) {
   .noteChild {
     width: 100%;

@@ -1,5 +1,6 @@
 <template>
   <div class="blog">
+    <h1 class="text-9xl text-center text-green-600 sm:bg-black sm:text-white">Hello TailWind.css</h1>
     <div class="swiper">
       <el-carousel :interval="5000" arrow="hover">
         <el-carousel-item v-for="(item, index) in url" :key="index">

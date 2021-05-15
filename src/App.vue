@@ -7,9 +7,6 @@
       class="iconfont iconfanhuidingbu"
       @click="backtop"
     ></div>
-    <!-- ????????? -->
-
-
     <!-- <Player/> -->
   </div>
 </template>
@@ -95,6 +92,7 @@ export default {
     },
   },
   async created() {
+     
     // 第一次进入网页的loading状态
     if (document.getElementById("Loading"))
       document.getElementById("Loading").remove();

@@ -38,7 +38,7 @@ export default {
     Headerbar,
   },
   mounted() {
-   
+  
   },
   methods: {
     handleSelect(key, keyPath) {

@@ -56,7 +56,6 @@ export default {
 };
 </script>
 <style lang="scss">
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -64,7 +63,6 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
 .el-menu-item,
 .el-submenu__title {
   height: 60px;
@@ -75,7 +73,6 @@ export default {
   border-bottom: solid 1px #ccc;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 @keyframes spotlight {
   0% {
     -webkit-transform: translate3d(0, -100%, 0);

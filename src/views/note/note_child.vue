@@ -120,7 +120,6 @@ export default {
 .box {
   transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
-
 .textContext {
   line-height: 1.75em;
   text-indent: 2em;

@@ -7,7 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.1.2",
     "@vue/composition-api": "^1.0.0-rc.8",
+    "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.8.1",
     "element-ui": "^2.14.1",
@@ -17,6 +19,8 @@
     "markdown-loader": "^6.0.0",
     "marked": "^2.0.1",
     "mavon-editor": "^2.9.1",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0",
@@ -27,12 +31,9 @@
     "@vue/cli-plugin-router": "^4.5.9",
     "@vue/cli-plugin-vuex": "^4.5.9",
     "@vue/cli-service": "^4.5.9",
-    "autoprefixer": "^10.2.5",
     "babel-plugin-component": "^1.1.1",
-    "postcss": "^8.2.15",
     "sass": "^1.30.0",
     "sass-loader": "^8.0.2",
-    "tailwindcss": "^2.1.2",
     "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [

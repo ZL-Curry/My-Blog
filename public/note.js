@@ -1,5 +1,9 @@
 // 杂记json文件
 window.$$note = [
+  {
+    title: "一切的问题皆有答案",
+    createdTime: '2021-5-18'
+  },
   { 
     title:'今天第一次面试别人',
     createdTime:'2021-5-15',

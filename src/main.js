@@ -3,54 +3,53 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// tailwind.css
 import './index.css'
 
+// 在vue2中使用vue3语法的API
 import VueCompositionApi from '@vue/composition-api'
 Vue.use(VueCompositionApi)
 
+// 引用element-ui组件库
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-// import mavonEditor from 'mavon-editor'
-// import 'mavon-editor/dist/css/index.css'
-// Vue.use(mavonEditor)
-
-import 'highlight.js/styles/googlecode.css' // 样式文件
-import hljs from 'highlight.js'
-hljs.highlightCode = function () { 
-	//自定义highlightCode方法，将只执行一次的逻辑去掉
-	let blocks = document.querySelectorAll('pre code');
-	[].forEach.call(blocks, hljs.highlightBlock);
-};
-Vue.directive('highlight', function (el) {
-  let blocks = el.querySelectorAll('pre code')
-  blocks.forEach((block) => {
-    hljs.highlightBlock(block)
-  })
-})
-
+// 引用Axios请求库
 import axios from 'axios'
 const baseurl = "http://localhost:8000"                             
 axios.defaults.baseURL = baseurl
 Vue.prototype.$axios = axios
 
-
 //引入公共的方法 
 import tools from "./utils/tools"
 Vue.mixin(tools)
+
+// 阻止启动生产消息
 Vue.config.productionTip = false
 
-Vue.directive('scroll', {
-  inserted: function (el, binding) {
-    let f = function (evt) {
-      if (binding.value(evt, el)) {
-        window.removeEventListener('scroll', f)
-      }
-    }
-    window.addEventListener('scroll', f)
-  }
-})
+// 工具类
+import XEUtils from 'xe-utils'
+
+// 新接口
+import Apis from './common/api.js'
+// 格式化
+import Format from './common/format.js'
+// 工具类
+import Util from './common/utils.js'
+// 全局事件总线
+import bus from './common/bus.js'
+// 文本验证
+import Rules from './common/rules'
+
+Vue.prototype.$store = store
+Vue.prototype.$apis = Apis
+Vue.prototype.$Format = Format
+Vue.prototype.$XEUtils = XEUtils
+Vue.prototype.$Util = Util
+Vue.prototype.$bus = bus
+Vue.prototype.$Rules = Rules
+Vue.prototype.$window = window
 
 new Vue({
   router,

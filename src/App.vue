@@ -2,19 +2,19 @@
   <div id="app">
     <router-view />
     <div
-      v-if="topheight"
       id="myBtn"
       class="iconfont iconfanhuidingbu"
       @click="backtop"
+       v-if="topheight"
     ></div>
-    <!-- <Player/> -->
+    <Player/>
   </div>
 </template>
 <script scoped>
-// import Player from "zw-player";
+import Player from "zw-player";
 export default {
   components: {
-    // Player,
+    Player,
   },
   data() {
     return {
@@ -23,40 +23,25 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.showbtn, true);
-    let text = window.$$consoleText;
-    console.log(`%c${text}`, "color: #9fdd0e");
     // 重写console.log
     console.log = (function (oriLogFunc) {
       return function () {
-        let showText = "BABALU";
+        let showText = "BABALU"
         try {
           if (arguments[0] == "error") {
-            oriLogFunc.call(
-              console,
-              `%c ${showText} `,
-              "color: white; background-color: red",
-              ...arguments
-            );
+            oriLogFunc.call(console, `%c ${showText} `, "color: white; background-color: red", ...arguments)
           } else if (arguments[0] == "success") {
-            oriLogFunc.call(
-              console,
-              `%c ${showText} `,
-              "color: white; background-color: rgb(110,219,99)",
-              ...arguments
-            );
+            oriLogFunc.call(console, `%c ${showText} `, "color: white; background-color: rgb(110,219,99)", ...arguments)
           } else {
-            oriLogFunc.call(
-              console,
-              `%c ${showText} `,
-              "color: white; background-color: rgb(38,188,213)",
-              ...arguments
-            );
+            oriLogFunc.call(console, `%c ${showText} `, "color: white; background-color: rgb(38,188,213)", ...arguments)
           }
         } catch (e) {
           console.error("console.log error", e);
         }
       };
-    })(console.log);
+    })(console.log)
+
+    console.log(`%c${window.$$consoleText}`, "color: #9fdd0e")
   },
   methods: {
     showbtn() {
@@ -92,10 +77,8 @@ export default {
     },
   },
   async created() {
-     
     // 第一次进入网页的loading状态
-    if (document.getElementById("Loading"))
-      document.getElementById("Loading").remove();
+    if (document.getElementById("Loading")) document.getElementById("Loading").remove();
   },
 };
 </script>

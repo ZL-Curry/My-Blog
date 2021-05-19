@@ -24,6 +24,8 @@
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0",
+    "vxe-utils": "^2.0.1",
+    "xe-utils": "^3.2.1",
     "zw-player": "^1.0.6"
   },
   "devDependencies": {

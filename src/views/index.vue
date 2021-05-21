@@ -32,7 +32,7 @@ export default {
     };
   },
   created() {
-    console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
+    // console.log('%c "一个人倘若需要从思想中得到快乐,那么他的第一个欲望就是学习   ——王小波"', "color:green;font-size:20px");
   },
   components: {
     Headerbar,

@@ -10,6 +10,9 @@ import './index.css'
 import VueCompositionApi from '@vue/composition-api'
 Vue.use(VueCompositionApi)
 
+// 引入mock.js
+import './mock/index.js'
+
 // 引用element-ui组件库
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -17,8 +20,8 @@ Vue.use(ElementUI);
 
 // 引用Axios请求库
 import axios from 'axios'
-const baseurl = "http://localhost:8000"                             
-axios.defaults.baseURL = baseurl
+// const baseurl = "http://localhost:8000"                             
+// axios.defaults.baseURL = baseurl
 Vue.prototype.$axios = axios
 
 //引入公共的方法 

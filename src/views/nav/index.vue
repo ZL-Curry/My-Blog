@@ -71,7 +71,10 @@ export default {
       count: 0,
     };
   },
-  created() {},
+ async created() {
+    // let res = await this.$axios.get('/rank')
+    // console.log(res)
+  },
   mounted() {},
   methods: {},
 };

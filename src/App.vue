@@ -7,14 +7,14 @@
       @click="backtop"
        v-if="topheight"
     ></div>
-    <Player/>
+    <!-- <Player/> -->
   </div>
 </template>
 <script scoped>
 import Player from "zw-player";
 export default {
   components: {
-    Player,
+    // Player,
   },
   data() {
     return {
@@ -41,7 +41,7 @@ export default {
       };
     })(console.log)
 
-    console.log(`%c${window.$$consoleText}`, "color: #9fdd0e")
+    // console.log(`%c${window.$$consoleText}`, "color: #9fdd0e")
   },
   methods: {
     showbtn() {

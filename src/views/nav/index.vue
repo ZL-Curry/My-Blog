@@ -3,16 +3,16 @@
     <h1 class="text-9xl text-center text-green-600 sm:bg-black sm:text-white">
       Hello TailWind.css
     </h1>
-    <h-title />
-    <h-hhh />
+    <!-- <h-title />
+    <h-hhh /> -->
 
-    <div class="swiper">
+    <!-- <div class="swiper">
       <el-carousel :interval="5000" arrow="hover">
         <el-carousel-item v-for="(item, index) in url" :key="index">
           <el-image :src="item.imgurl" fit style="width: 100%"></el-image>
         </el-carousel-item>
       </el-carousel>
-    </div>
+    </div> -->
     <div class="daohang">
       <el-button
         plain

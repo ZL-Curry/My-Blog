@@ -1,8 +1,17 @@
 <template>
   <div class="blog">
-    <h1 class="text-9xl text-center text-green-600 sm:bg-black sm:text-white">
+    <h1 class="text-64px text-center">???</h1>
+
+    <div class="flex items-center justify-center bg-themeColor">
+      <div class="relative w-40 h-40 bg-red-300">
+        <div class="absolute top-20 right-0 w-32 h-32 bg-red-500"></div>
+      </div>
+    </div>
+    
+    <div class="border-2 rounded-full w-40 h-40 border-solid border-red-500"></div>
+    <!-- <h1 class="text-9xl text-center text-green-600 sm:bg-black sm:text-white">
       Hello TailWind.css
-    </h1>
+    </h1> -->
     <!-- <h-title />
     <h-hhh /> -->
 
@@ -45,7 +54,10 @@ export default {
       },
       render() {
         return (
-          <button onClick={this.onClick} style={{ marginTop: "10px",backgroundColor:"red"}}>
+          <button
+            onClick={this.onClick}
+            style={{ marginTop: "10px", backgroundColor: "red" }}
+          >
             You clicked me {this.count} times.
           </button>
         );
@@ -71,16 +83,22 @@ export default {
       count: 0,
     };
   },
- async created() {
+  async created() {
     // let res = await this.$axios.get('/rank')
     // console.log(res)
   },
-  mounted() {},
+  mounted() {
+    let a = 0;
+  },
   methods: {},
 };
 </script>
 
 <style scoped lang="scss">
+// test h-full
+html,body{
+  height: 100%;
+}
 .blog {
   min-height: calc(100vh - 126px);
   width: 100%;

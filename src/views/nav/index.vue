@@ -1,5 +1,13 @@
 <template>
   <div class="blog">
+
+    <ul ref="lists">
+      <li class="test1 test2">1</li>
+      <li class="test1 test2">1</li>
+      <li class="test1 test2">1</li>
+    </ul>
+
+
     <h1 class="text-64px text-center">???</h1>
 
     <div class="flex items-center justify-center bg-themeColor">
@@ -40,6 +48,7 @@
 
 <script>
 import Title from "./item";
+import { addClass } from "../../utils/tests.js"
 export default {
   components: {
     "h-title": Title,
@@ -51,6 +60,7 @@ export default {
           console.log(this.propsCount);
           this.$emit("change", this.count + 1);
         },
+        
       },
       render() {
         return (
@@ -86,15 +96,32 @@ export default {
   async created() {
     // let res = await this.$axios.get('/rank')
     // console.log(res)
+    
   },
   mounted() {
     let a = 0;
+    this._addClass()
   },
-  methods: {},
+  methods: {
+    _addClass() {
+      let lists =  this.$refs.lists.children
+      for (let i = 0; i < lists.length; i++) {
+        let item = lists[i]
+        addClass(item, 'test3')
+      }
+      console.log(lists)
+    }
+  },
 };
 </script>
 
 <style scoped lang="scss">
+// 测试动态添加类
+.test3{
+  color: red;
+}
+
+
 // test h-full
 html,body{
   height: 100%;

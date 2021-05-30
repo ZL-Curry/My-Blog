@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import notes from "./note_child";
+// import notes from "./note_child";
 
 export default {
   data() {
     return {};
   },
   components: {
-    notes,
+    "notes": () => import('./note_child')
   },
   created() {},
   mounted() {},

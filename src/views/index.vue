@@ -107,7 +107,7 @@ export default {
 }
 
 .mains {
-  width: 83%;
+  width: 100%;
   margin: 0 auto;
   // min-height: calc(100vh - 126px);
   // height: auto;

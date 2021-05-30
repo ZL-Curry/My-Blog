@@ -66,4 +66,12 @@ export default [
       title: 'about'
     }
   },
+  {
+    path: '/loading',
+    name: 'loading',
+    component: () => import('../components/icc_loading'),
+    meta: {
+      title: 'loading'
+    }
+  },
 ]

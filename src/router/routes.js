@@ -3,7 +3,7 @@ import routerMap from './routerMap'
 const routes = [
   {
     path: '/',
-    redirect:'/navigation',
+    // redirect:'/',
     name: 'home',
     component: home,
     children: [...routerMap]
@@ -17,6 +17,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('../views/user/login.vue')
+  },
+  {
+    path: '/map',
+    name: 'map2',
+    component: () => import('../views/Map/sqMap.vue')
   },
   // {
   //   path: '/richtext',

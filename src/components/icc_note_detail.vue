@@ -2,10 +2,7 @@
   <div class="noteDetail">
     <div class="content">
       <el-card>
-        <div
-          slot="header"
-          class="clearfix blod_text"
-        >
+        <div slot="header" class="clearfix blod_text">
           <h4 class="_h1">{{ this.$route.params.item.title || "" }}</h4>
         </div>
         <div class="text_content">

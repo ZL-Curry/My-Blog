@@ -1,35 +1,12 @@
 <template>
   <div class="blog">
-
-    <ul ref="lists">
-      <li class="test1 test2">1</li>
-      <li class="test1 test2">1</li>
-      <li class="test1 test2">1</li>
-    </ul>
-
-
-    <h1 class="text-64px text-center">???</h1>
-
-    <div class="flex items-center justify-center bg-themeColor">
-      <div class="relative w-40 h-40 bg-red-300">
-        <div class="absolute top-20 right-0 w-32 h-32 bg-red-500"></div>
-      </div>
-    </div>
-    
-    <div class="border-2 rounded-full w-40 h-40 border-solid border-red-500"></div>
-    <!-- <h1 class="text-9xl text-center text-green-600 sm:bg-black sm:text-white">
-      Hello TailWind.css
-    </h1> -->
-    <!-- <h-title />
-    <h-hhh /> -->
-
-    <!-- <div class="swiper">
+    <div class="swiper">
       <el-carousel :interval="5000" arrow="hover">
         <el-carousel-item v-for="(item, index) in url" :key="index">
           <el-image :src="item.imgurl" fit style="width: 100%"></el-image>
         </el-carousel-item>
       </el-carousel>
-    </div> -->
+    </div>
     <div class="daohang">
       <el-button
         plain
@@ -50,30 +27,6 @@
 import Title from "./item";
 import { addClass } from "../../utils/tests.js"
 export default {
-  components: {
-    "h-title": Title,
-    "h-hhh": {
-      name: "button-counter",
-      props: ["count"],
-      methods: {
-        onClick() {
-          console.log(this.propsCount);
-          this.$emit("change", this.count + 1);
-        },
-        
-      },
-      render() {
-        return (
-          <button
-            onClick={this.onClick}
-            style={{ marginTop: "10px", backgroundColor: "red" }}
-          >
-            You clicked me {this.count} times.
-          </button>
-        );
-      },
-    },
-  },
   data() {
     return {
       id: 1,
@@ -94,12 +47,8 @@ export default {
     };
   },
   async created() {
-    // let res = await this.$axios.get('/rank')
-    // console.log(res)
-    
   },
   mounted() {
-    let a = 0;
     this._addClass()
   },
   methods: {

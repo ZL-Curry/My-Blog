@@ -30,11 +30,13 @@
     "zw-player": "^1.0.6"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@vue/cli-plugin-babel": "^4.5.9",
     "@vue/cli-plugin-router": "^4.5.9",
     "@vue/cli-plugin-vuex": "^4.5.9",
     "@vue/cli-service": "^4.5.9",
     "babel-plugin-component": "^1.1.1",
+    "postcss": "^7.0.38",
     "sass": "^1.30.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"

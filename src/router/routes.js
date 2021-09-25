@@ -18,15 +18,5 @@ const routes = [
     name: 'login',
     component: () => import('../views/user/login.vue')
   },
-  {
-    path: '/map',
-    name: 'map2',
-    component: () => import('../views/Map/sqMap.vue')
-  },
-  // {
-  //   path: '/richtext',
-  //   name: 'richtext',
-  //   component: () => import('../views/richtext.vue')
-  // },
 ]
 export default routes

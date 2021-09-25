@@ -41,24 +41,6 @@ export default [
     }
   },
   {
-    path: '/infinity',
-    name: 'infinty',
-    component: () => import('../views/infinity/infinity.vue'),
-    meta: {
-      title: 'infinty',
-      keepAlive:true
-    }
-  },
-  {
-    path: '/beyond',
-    name: 'beyond',
-    component: () => import('../views/beyond/beyond.vue'),
-    meta: {
-      title: 'beyond',
-      keepAlive:true
-    }
-  },
-  {
     path: '/about',
     name: 'about',
     component: () => import('../views/About/'),

@@ -49,8 +49,6 @@ export default {
         { name: "Home", path: "/", zh_name: '技术笔记'},
         { name: "Navigation", path: "/navigation" , zh_name: '导航' },
         { name: "Note", path: "/note", zh_name: '杂记'},
-        { name: "Infinity", path: "/infinity", zh_name: '无限'},
-        { name: "Beyond", path: "/beyond", zh_name: '年轻'},
         { name: "About", path: "/about", zh_name: '关于我'},
       ],
     };

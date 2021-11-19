@@ -11,7 +11,7 @@
   </div>
 </template>
 <script scoped>
-import Player from "zw-player";
+// import Player from "zw-player";
 export default {
   components: {
     // Player,
@@ -40,7 +40,6 @@ export default {
         }
       };
     })(console.log)
-
     // console.log(`%c${window.$$consoleText}`, "color: #9fdd0e")
   },
   methods: {

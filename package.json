@@ -1,6 +1,9 @@
 {
   "name": "babalu",
   "version": "0.1.0",
+  "productName": "巴巴鲁",
+  "description": "巴巴鲁个人博客",
+  "author": "Icc <1697362616@qq.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
@@ -20,7 +23,6 @@
     "marked": "^2.0.1",
     "mavon-editor": "^2.9.1",
     "mockjs": "^1.1.0",
-    "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
@@ -35,6 +37,8 @@
     "@vue/cli-plugin-vuex": "^4.5.9",
     "@vue/cli-service": "^4.5.9",
     "babel-plugin-component": "^1.1.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "sass": "^1.30.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"

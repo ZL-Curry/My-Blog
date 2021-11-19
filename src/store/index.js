@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import cfg from '../../package.json'
 
 Vue.use(Vuex)
 
 const state = {
   username: "</>巴巴鲁",
-  count: 0
+  count: 0,
+  title: cfg.productName, // 标题
+  version: cfg.version, // 本号
+  description: cfg.description, // 介绍
+  author: cfg.author, // 作者
 }
 /**
  *  同步修改，mutations里面的参数，第一个默认为state，接下来的为自定义参数

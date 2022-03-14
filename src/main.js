@@ -20,7 +20,6 @@ Vue.use(ElementUI);
 
 // 引用Axios请求库
 import axios from 'axios'
-// const baseurl = "http://localhost:8000"                             
 // axios.defaults.baseURL = baseurl
 Vue.prototype.$axios = axios
 

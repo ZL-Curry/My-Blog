@@ -1,19 +1,3 @@
-# babalu
-
-## Project setup
-```
-npm install || yarn
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve || yarn serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### plan
++ 3月底之前完成简单的样式调整，引入富文本
++ 配合node写入本地json

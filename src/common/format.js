@@ -1,4 +1,3 @@
-// 方法为页面中常用格式化方法
 import XEUtils from 'xe-utils'
 
 /**

@@ -1,11 +1,9 @@
 import axios from 'axios'
-// import XEUtils from 'xe-utils'
 import Vue from 'vue'
 
-// 添加请求拦截器，在发送请求之前做些什么(**具体查看axios文档**)--------------------------------------------
+// 添加请求拦截器
 axios.interceptors.request.use(function (config) {
   console.log("请求：",config);
-  // 显示loading
   return config
 }, function (error) {
   // 请求错误时弹框提示，或做些其他事
@@ -37,7 +35,6 @@ function errorState (response) {
 // 封装数据返回成功提示函数---------------------------------------------------------------------------
 function successState (res) {
   console.log("响应数据：",res);
-  // 隐藏loading
   // 统一判断后端返回的错误码(错误码与后台协商而定)
   if (res.error === 0) {
     return res

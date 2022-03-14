@@ -41,12 +41,9 @@ export default {
           imgurl: require("@/assets/img/bz3.jpg"),
         },
       ],
-      // 导航列表
       srclist: window.$$navigationList,
       count: 0,
     };
-  },
-  async created() {
   },
   mounted() {
     this._addClass()

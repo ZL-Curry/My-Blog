@@ -7,15 +7,10 @@
       @click="backtop"
        v-if="topheight"
     ></div>
-    <!-- <Player/> -->
   </div>
 </template>
 <script scoped>
-// import Player from "zw-player";
 export default {
-  components: {
-    // Player,
-  },
   data() {
     return {
       topheight: false,

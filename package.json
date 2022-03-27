@@ -15,21 +15,10 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.8.1",
-    "element-ui": "^2.14.1",
-    "highlight.js": "^10.6.0",
-    "html-loader": "^2.1.2",
-    "markdown-it": "^12.0.4",
-    "markdown-loader": "^6.0.0",
-    "marked": "^2.0.1",
-    "mavon-editor": "^2.9.1",
     "mockjs": "^1.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
-    "vuex": "^3.6.0",
-    "vxe-utils": "^2.0.1",
-    "xe-utils": "^3.2.1",
-    "zw-player": "^1.0.6"
+    "vuex": "^3.6.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",

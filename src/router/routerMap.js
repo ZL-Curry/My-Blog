@@ -26,7 +26,7 @@ export default [
   {
     path: '/navigation',
     name: 'navigation',
-    component: () => import('../views/nav/'),
+    component: () => import('../views/nav/navigation'),
     meta: {
       title: 'navigation'
     }

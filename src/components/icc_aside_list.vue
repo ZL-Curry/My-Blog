@@ -1,6 +1,6 @@
 <template>
   <div class="asideList">
-    <el-card
+    <div
       class="box-card"
       :body-style="{
         backgroundColor: '#f5f5f5',
@@ -21,7 +21,7 @@
       >
         <h4>{{ item.title.split("").slice(0, 20).join("") }}...</h4>
       </div>
-    </el-card>
+    </div>
   </div>
 </template>
 <script>

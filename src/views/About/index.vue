@@ -17,21 +17,21 @@
     </p>
     <p>本网站主要用来写一些技术博客，记录生活，分享感悟 🎈</p>
     <div style="height: 100px">
-      <el-steps direction="horizontal" :active="1" finish-status="success">
-        <el-step title="响应式布局" description="实现各种设备兼容"></el-step>
-        <el-step
+      <div direction="horizontal" :active="1" finish-status="success">
+        <div title="响应式布局" description="实现各种设备兼容"></div>
+        <div
           title="富文本编辑器"
           description="TipTap或百度Editor"
-        ></el-step>
-        <el-step
+        ></div>
+        <div
           title="Node后台接口"
           description="设计一个完成的博客系统后台，完成增删改查"
-        ></el-step>
-        <el-step
+        ></div>
+        <div
           title="支持登录，留言，发布帖子"
           description="目前已完成登录注册功能"
-        ></el-step>
-      </el-steps>
+        ></div>
+      </div>
     </div>
     <div id="container"></div>
   </div>

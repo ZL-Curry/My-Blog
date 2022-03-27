@@ -2,7 +2,7 @@
   <div>
     <div class="homelist" id="homelist">
       <div class="left">
-        <el-card
+        <div
           class="box-card"
           v-for="(item, index) in AlideList"
           :key="index"
@@ -20,7 +20,7 @@
           <div class="text_content" @click="lookDetail(item)">
             <p>{{ item.context }}</p>
           </div>
-        </el-card>
+        </div>
         <div style="height:400px;">
         </div>
       </div>

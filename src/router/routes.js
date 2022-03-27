@@ -3,7 +3,7 @@ import routerMap from './routerMap'
 const routes = [
   {
     path: '/',
-    // redirect:'/',
+    redirect:'/',
     name: 'home',
     component: home,
     children: [...routerMap]

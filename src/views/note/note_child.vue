@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <el-card class="box-card" v-for="(item, index) in notes" :key="index">
+      <div class="box-card" v-for="(item, index) in notes" :key="index">
         <div
           slot="header"
           class="clearfix blod_text"
@@ -11,18 +11,17 @@
           <p>{{ item.createdTime || "" }}</p>
         </div>
         <div class="textContext" v-html="item.text"></div>
-        <el-image
+        <image
           cover
           lazy
-          z-index:100000
           v-for="(item2, index2) in item.imglist"
           :key="index2"
           class="note_img"
           :src="item2.imgurl"
           :preview-src-list="item2.srcList"
         >
-        </el-image>
-      </el-card>
+        </image>
+      </div>
     </div>
     <AsideList
       @changeActive="changeSelectStatus($event)"

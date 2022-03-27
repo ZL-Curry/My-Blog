@@ -1,14 +1,7 @@
 <template>
   <div class="blog">
-    <div class="swiper">
-      <el-carousel :interval="5000" arrow="hover">
-        <el-carousel-item v-for="(item, index) in url" :key="index">
-          <el-image :src="item.imgurl" fit style="width: 100%"></el-image>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
     <div class="daohang">
-      <el-button
+      <button
         plain
         type="success"
         v-for="(item, index) in srclist"
@@ -18,31 +11,17 @@
         <a :href="item.href" target="_blank">
           <span> {{ item.name }}</span>
         </a>
-      </el-button>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import Title from "./item";
 import { addClass } from "../../utils/tests.js"
 export default {
   data() {
     return {
-      id: 1,
-      url: [
-        {
-          imgurl: require("@/assets/img/bz1.jpg"),
-        },
-        {
-          imgurl: require("@/assets/img/bz2.jpg"),
-        },
-        {
-          imgurl: require("@/assets/img/bz3.jpg"),
-        },
-      ],
       srclist: window.$$navigationList,
-      count: 0,
     };
   },
   mounted() {

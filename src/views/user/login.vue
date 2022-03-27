@@ -34,7 +34,7 @@
         RandomNumber
       }}</span>
     </div>
-     <el-button type="primary" class="btn" round @click="login" @keyup.enter="login">注册</el-button>
+     <button type="primary" class="btn" round @click="login" @keyup.enter="login">注册</button>
     <p>还没账号？<a href="javascript:;" @click="navTo('/reg')">去注册</a></p>
   </div>
 </template>

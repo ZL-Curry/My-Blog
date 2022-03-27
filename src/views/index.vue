@@ -14,12 +14,12 @@
       </keep-alive>
     </div>
     <!-- 左侧 -->
-    <el-footer>
+    <div>
       <img src="@/assets/img/weixi_2_code.jpg" v-show="imgShowStatus" width="200" alt="微信二维码" class="wx_2_code_img">
       <a href="http://wpa.qq.com/msgrd?v=3&uin=1697362616&site=qq&menu=yes" target="_blank"><span>QQ:1697362616</span></a> | 
       <a href="javascript:;" v-on:mouseover="onMouserover" v-on:mouseout="onMouseout" class="wx_2_code_text"><span class="iconfont iconweixin1" > Wechat</span></a> | 
       <a href="https://github.com/ZL-Curry/" target='_blank'><span class="iconfont iconhuaban88"> GitHub</span></a>
-    </el-footer>
+    </div>
   </div>
 </template>
 <script>

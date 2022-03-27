@@ -8,8 +8,6 @@
 </template>
 
 <script>
-// import notes from "./note_child";
-
 export default {
   data() {
     return {};
@@ -23,7 +21,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .note{
   
 }

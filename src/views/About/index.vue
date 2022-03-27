@@ -5,34 +5,7 @@
       这是一个基于 <em>vue</em> 脚手架开发的PC端和移动端的
       <em>响应式</em> 个人博客
     </p>
-    <p>
-      项目中引入了
-      <em>Element-ui</em> ,但是很多组件达不到想要的效果
-    </p>
-    <p>
-      后台是基于 <em>NodeJS</em> 和 <em>mongoDB</em> 数据库开发，项目现在在
-      <em>宝塔面板</em>
-      上面托管，由于服务器是的性能不是太好，可能有时会出现进不去的情况，还望见谅
-      💖
-    </p>
     <p>本网站主要用来写一些技术博客，记录生活，分享感悟 🎈</p>
-    <div style="height: 100px">
-      <div direction="horizontal" :active="1" finish-status="success">
-        <div title="响应式布局" description="实现各种设备兼容"></div>
-        <div
-          title="富文本编辑器"
-          description="TipTap或百度Editor"
-        ></div>
-        <div
-          title="Node后台接口"
-          description="设计一个完成的博客系统后台，完成增删改查"
-        ></div>
-        <div
-          title="支持登录，留言，发布帖子"
-          description="目前已完成登录注册功能"
-        ></div>
-      </div>
-    </div>
     <div id="container"></div>
   </div>
 </template>
@@ -54,7 +27,6 @@ export default {
         center: [120.209336, 30.133265], //中心点坐标
         mapStyle: "amap://styles/macaron",
         pitch: 27, // 地图俯仰角度，有效范围 0 度- 83 度
-        // viewMode: "1D", //使用3D视图
         layers: [
           //使用多个图层
           // new AMap.TileLayer.Satellite(),
@@ -84,16 +56,6 @@ export default {
           // 定位出错
         }
       });
-      // 获取当前城市信息
-      // AMap.plugin("AMap.CitySearch", function () {
-      //   var citySearch = new AMap.CitySearch();
-      //   citySearch.getLocalCity(function (status, result) {
-      //     if (status === "complete" && result.info === "OK") {
-      //       // 查询成功，result即为当前所在城con
-      //       console.log(status,result)
-      //     }
-      //   });
-      // });
       //实时路况图层
       var trafficLayer = new AMap.TileLayer.Traffic({
         zIndex: 10,
@@ -116,7 +78,6 @@ export default {
       map.add(trafficLayer); //添加图层到地图
       marker.on("click", onMarkerClick); //绑定click事件
       var currentCenter = map.getCenter();
-      // console.log(currentCenter);
     },
     destroyMap() {
       this.map && this.map.destroy();

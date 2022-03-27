@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 
 // tailwind.css
-// import '@/assets/css/tailwind.css'
+import '@/assets/css/tailwind.css'
 
 // 在vue2中使用vue3语法的API
 import VueCompositionApi from '@vue/composition-api'
@@ -17,10 +17,6 @@ import './mock/index.js'
 import axios from 'axios'
 // axios.defaults.baseURL = baseurl
 Vue.prototype.$axios = axios
-
-//引入公共的方法 
-import tools from "./utils/tools"
-Vue.mixin(tools)
 
 // 阻止启动生产消息
 Vue.config.productionTip = false

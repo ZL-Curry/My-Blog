@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input v-model="testNumber" />
     <div class="homelist" id="homelist">
       <div class="left">
         <div
@@ -48,12 +49,25 @@ export default {
     return {
       changeActiveText: "",
       AlideList: window.$$learn_note,
+      testNumber:"",
       topArr: [],
     };
   },
   computed: {},
   watch: {},
-  created() {},
+  created() {
+    this.$watch('testNumber',(newVal,oldVal)=>{
+      if(newVal > 30){
+        console.log(newVal);
+      }
+      console.log(typeof newVal)
+      const test = "1000"
+      if (test > 99) {
+        console.log(test);
+      }
+      console.log(typeof test);
+    },{deep:true,immediate:true})
+  },
   mounted() {
     const jump = document.querySelectorAll(".left h4");
     for (let i = 0; i < jump.length; i++) {
